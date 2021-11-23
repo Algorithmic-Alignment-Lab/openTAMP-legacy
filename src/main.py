@@ -1,5 +1,5 @@
 import argparse, traceback
-from errors_exceptions import TampyException
+from errors_exceptions import OpenTAMPException
 from pma import pr_graph
 
 """
@@ -34,13 +34,13 @@ def main(domain_file, problem_file, solvers_file):
             plan.execute()
         else:
             print(msg)
-    except TampyException as e:
-        print("Caught an exception in Tampy:")
+    except OpenTAMPException as e:
+        print("Caught an exception in OpenTAMP:")
         traceback.print_exc()
         print("Terminating...")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run tampy.")
+    parser = argparse.ArgumentParser(description="Run OpenTAMP.")
     parser.add_argument("domain_file",
                         help="Path to the domain file to use. All domain settings should be specified in this file.")
     parser.add_argument("problem_file",

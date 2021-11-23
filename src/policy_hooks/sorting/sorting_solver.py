@@ -56,7 +56,7 @@ class BaxterPolicySolver(RobotLLSolver):
     # TODO: Add hooks for online policy learning
     def train_policy(self, num_cloths, hyperparams=None):
         '''
-        Integrates the GPS code base with the TAMPy codebase to create a robust
+        Integrates the GPS code base with the OpenTAMP codebase to create a robust
         system for combining motion planning with policy learning
 
         Each plan must have the same state dimension and action diemensions as the others, and equivalent parameters in both (e..g same # of

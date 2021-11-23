@@ -1,4 +1,4 @@
-# TAMPy
+# OpenTAMP
 This README assumes the installation is happenning in ubuntu >= 14 with python3.5
 
 
@@ -26,7 +26,7 @@ If you wish to train policies from the code, verify that a Mujoco key titled `mj
 ### Defining domains
 
 #### Domain files
-Specifications for all domains should be placed in the `domains` folder directly under the `tampy` directory
+Specifications for all domains should be placed in the `domains` folder directly under the `OpenTAMP` directory
 
 For a concrete example, refer to `domains/namo_domain/generate_namo_domain.py`. This is script designed to generate a domain file (these files are cumbersome to write directly by hand)
 

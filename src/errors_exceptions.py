@@ -1,38 +1,38 @@
-class TampyException(Exception):
-    """ A generic exception for Tampy """
+class OpenTAMPException(Exception):
+    """ A generic exception for OpenTAMP """
 
-class ProblemConfigException(TampyException):
+class ProblemConfigException(OpenTAMPException):
     """ Either config not found or config format incorrect """
     pass
 
-class DomainConfigException(TampyException):
+class DomainConfigException(OpenTAMPException):
     """ Either config not found or config format incorrect """
     pass
 
-class SolversConfigException(TampyException):
+class SolversConfigException(OpenTAMPException):
     """ Either config not found or config format incorrect """
     pass
 
-class ParamValidationException(TampyException):
+class ParamValidationException(OpenTAMPException):
     """ Check validate_params functions """
     pass
 
-class PredicateException(TampyException):
+class PredicateException(OpenTAMPException):
     """ Predicate type mismatch, not defined, or parameter range violation """
     pass
 
-class HLException(TampyException):
+class HLException(OpenTAMPException):
     """ An issue with the high level solver (hl_solver) """
     pass
 
-class LLException(TampyException):
+class LLException(OpenTAMPException):
     """ An issue with the low level solver (ll_solver) """
     pass
 
-class OpenRAVEException(TampyException):
+class OpenRAVEException(OpenTAMPException):
     """ An OpenRAVE related issue"""
     pass
-class ImpossibleException(TampyException):
+class ImpossibleException(OpenTAMPException):
 
     """ This exception should never be raised """
     pass
