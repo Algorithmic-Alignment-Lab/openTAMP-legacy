@@ -6,15 +6,19 @@ authors = ["Nishanth Kumar <njk@csail.mit.edu>, Dylan Hadfield-Menell <dhm@csail
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = ">=3.6"
-numpy = ">=1.13.3,<=1.14.5"
+python = ">=3.7.1,<3.8"
+numpy = ">=1.13.3"
 pybullet = "3.1.6"
 ipdb = "^0.13.9"
 numdifftools = "^0.9.40"
-seaborn = "0.9.0"
 psutil = "^5.8.0"
 mpi4py = "^3.1.2"
 imageio = "^2.12.0"
+robosuite = "^1.3.1"
+numba = ">=0.52.0,<=0.53.1"
+dm-control = "^0.0.403778684"
+h5py = "^3.6.0"
+tensorflow = "<1.15"
 
 [tool.poetry.dev-dependencies]
 
