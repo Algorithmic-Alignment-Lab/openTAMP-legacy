@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!-- Robot limits pulled from https://frankaemika.github.io/docs/control_parameters.html#constants -->
+<mujoco model="franka_desk">
+  <compiler angle="radian"/>
+  <size njmax="2000" nconmax="2000"/>
+  <option timestep="0.002"/>
+  <compiler angle="radian"/>
+  <size nuser_actuator="5"/>
+  <actuator>
+    <position name="panda0_joint1" joint="panda0_joint1" class="panda" kp="870" forcerange="-87 87" ctrlrange="-2.9671 2.9671"/> <!-- velocity="2.1750" -->
+    <position name="panda0_joint2" joint="panda0_joint2" class="panda" kp="870" forcerange="-87 87" ctrlrange="-1.8326 1.8326"/> <!-- velocity="2.1750" -->
+    <position name="panda0_joint3" joint="panda0_joint3" class="panda" kp="870" forcerange="-87 87" ctrlrange="-2.9671 2.9671"/> <!-- velocity="2.1750" -->
+    <position name="panda0_joint4" joint="panda0_joint4" class="panda" kp="870" forcerange="-87 87" ctrlrange="-3.1416 0.0"/> <!-- velocity="2.1750" -->
+    <position name="panda0_joint5" joint="panda0_joint5" class="panda" kp="120" forcerange="-12 12" ctrlrange="-2.9671 2.9671"/> <!-- velocity="2.6100" -->
+    <position name="panda0_joint6" joint="panda0_joint6" class="panda" kp="120" forcerange="-12 12" ctrlrange="-3.7525 2.1817"/> <!-- velocity="2.6100" -->
+    <position name="panda0_joint7" joint="panda0_joint7" class="panda" kp="120" forcerange="-12 12" ctrlrange="-2.9671 2.9671"/> <!-- velocity="2.9671" -->
+    <position name="r_gripper_finger_joint" joint="panda0_finger_joint1" class="panda_finger" kp="500" forcerange="-70 70" ctrlrange="0 0.04"/> <!-- velocity=".2" -->
+    <position name="l_gripper_finger_joint" joint="panda0_finger_joint2" class="panda_finger" kp="500" forcerange="-70 70" ctrlrange="0 0.04"/> <!-- velocity=".2" -->
+  </actuator>
+  <asset>
+    <!-- Franka meshes -->
+    <mesh name="link0_col" file="meshes/franka/collision_link0.stl"/>
+    <mesh name="link1_col" file="meshes/franka/collision_link1.stl"/>
+    <mesh name="link2_col" file="meshes/franka/collision_link2.stl"/>
+    <mesh name="link3_col" file="meshes/franka/collision_link3.stl"/>
+    <mesh name="link4_col" file="meshes/franka/collision_link4.stl"/>
+    <mesh name="link5_col" file="meshes/franka/collision_link5.stl"/>
+    <mesh name="link6_col" file="meshes/franka/collision_link6.stl"/>
+    <mesh name="link7_col" file="meshes/franka/collision_link7.stl"/>
+    <mesh name="hand_col" file="meshes/franka/collision_hand.stl"/>
+    <mesh name="finger_col" file="meshes/franka/collision_finger.stl" scale="1.75 1.0 1.75"/>
+    <mesh name="link0_viz" file="meshes/franka/visual_link0.stl"/>
+    <mesh name="link1_viz" file="meshes/franka/visual_link1.stl"/>
+    <mesh name="link2_viz" file="meshes/franka/visual_link2.stl"/>
+    <mesh name="link3_viz" file="meshes/franka/visual_link3.stl"/>
+    <mesh name="link4_viz" file="meshes/franka/visual_link4.stl"/>
+    <mesh name="link5_viz" file="meshes/franka/visual_link5.stl"/>
+    <mesh name="link6_viz" file="meshes/franka/visual_link6.stl"/>
+    <mesh name="link7_viz" file="meshes/franka/visual_link7.stl"/>
+    <mesh name="hand_viz" file="meshes/franka/visual_hand.stl"/>
+    <mesh name="finger_viz" file="meshes/franka/visual_finger.stl" scale="1.75 1.0 1.75"/>
+  </asset>
+  <default>
+    <!-- Franka default classes -->
+    <default class="panda">
+      <joint pos="0 0 0" axis="0 0 1" limited="true"/>
+      <position forcelimited="true" ctrllimited="true" user="1002 40 2001 -0.005 0.005"/>
+      <default class="panda_viz">
+        <geom contype="0" conaffinity="0" group="0" type="mesh" rgba=".95 .99 .92 1" mass="0"/>
+      </default>
+      <default class="panda_col">
+        <geom contype="1" conaffinity="1" group="3" type="mesh" rgba=".5 .6 .7 1"/>
+      </default>
+      <default class="panda_arm">
+        <joint damping="100"/>
+      </default>
+      <default class="panda_forearm">
+        <joint damping="10"/>
+      </default>
+      <default class="panda_finger">
+        <joint damping="100" armature="5"/>
+        <geom friction="1 0.5 0.0001" solref="0.01 1" solimp="0.8 0.9 0.001" margin="0.001" user="0" rgba="0.5 0.6 0.7 .4" contype="1" conaffinity="0" condim="6" group="3"/>
+        <position user="1002 40 2001 -0.0001 0.0001"/>
+      </default>
+    </default>
+    <default class="panda_overlay">
+      <joint limited="false" damping="1000" armature="1" frictionloss="10"/>
+      <geom contype="0" conaffinity="0" group="2" type="mesh" rgba=".42 0.42 0.42 .5"/>
+    </default>
+  </default>
+
+  <worldbody name="panda0_body" childclass="panda">
+      <body name="panda0_link0" childclass="panda">
+        <geom type="mesh" class="panda_viz" mesh="link0_viz"/>
+        <geom type="mesh" class="panda_col" mesh="link0_col" mass="2.91242"/>
+        <body name="panda0_link1" pos="0 0 0.333">
+          <joint axis="0 0 1" type="hinge" name="panda0_joint1" range="-2.8973 2.8973" class="panda_arm"/>
+          <geom type="mesh" class="panda_viz" mesh="link1_viz"/>
+          <geom type="mesh" class="panda_col" mesh="link1_col" mass="2.7063"/>
+          <body name="panda0_link2" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+            <joint axis="0 0 1" type="hinge" name="panda0_joint2" range="-1.7628 1.7628" class="panda_arm"/>
+            <geom type="mesh" class="panda_viz" mesh="link2_viz"/>
+            <geom type="mesh" class="panda_col" mesh="link2_col" mass="2.73046"/>
+            <body name="panda0_link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+              <joint axis="0 0 1" type="hinge" name="panda0_joint3" range="-2.8973 2.8973" class="panda_arm"/>
+              <geom type="mesh" class="panda_viz" mesh="link3_viz"/>
+              <geom type="mesh" class="panda_col" mesh="link3_col" mass="2.04104"/>
+              <body name="panda0_link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                <joint axis="0 0 1" type="hinge" name="panda0_joint4" range="-3.0718 -0.4" class="panda_arm"/>
+                <geom type="mesh" class="panda_viz" mesh="link4_viz"/>
+                <geom type="mesh" class="panda_col" mesh="link4_col" mass="2.08129"/>
+                <body name="panda0_link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                  <joint axis="0 0 1" type="hinge" name="panda0_joint5" range="-2.8973 2.8973" class="panda_forearm"/>
+                  <geom type="mesh" class="panda_viz" mesh="link5_viz"/>
+                  <geom type="mesh" class="panda_col" mesh="link5_col" mass="3.00049"/>
+                  <body name="panda0_link6" pos="0 0 0" euler="1.57 0 1.57">
+                    <joint axis="0 0 1" type="hinge" name="panda0_joint6" range="-1.6573 2.1127" class="panda_forearm"/>
+                    <geom type="mesh" class="panda_viz" mesh="link6_viz"/>
+                    <geom type="mesh" class="panda_col" mesh="link6_col" mass="1.3235"/>
+                    <body name="panda0_link7" pos="0.088 0 0" euler="1.57 0 0.7854">
+                      <joint axis="0 0 1" type="hinge" name="panda0_joint7" range="-2.8973 2.8973" class="panda_forearm"/>
+                      <geom type="mesh" class="panda_viz" mesh="link7_viz"/>
+                      <geom type="mesh" class="panda_col" mesh="link7_col" mass="0.2"/>
+                      <geom type="mesh" pos="0 0 0.107" quat="0.92388 0 0 -0.382683" class="panda_viz" mesh="hand_viz"/>
+                      <geom type="mesh" pos="0 0 0.107" quat="0.92388 0 0 -0.382683" class="panda_col" mesh="hand_col" mass="0.81909"/>
+                      <site name="end_effector" pos="0 0 .210" size="0.01" euler="0 0 -0.785398"/>
+                      <body name="panda0_leftfinger" pos="0 0 0.1654" quat="0.92388 0 0 -0.382683" childclass="panda_finger">
+                        <inertial pos="-1.57863e-05 0.0118731 0.0434103" quat="0.705868 0.0310348 -0.0314925 0.706962" mass="0.0927059" diaginertia="6.57134e-05 6.09611e-05 1.09932e-05"/>
+                        <joint name="panda0_finger_joint1" axis="0 1 0" type="slide" range="0 0.04" class="panda_finger"/>
+                        <geom type="mesh" class="panda_viz" mesh="finger_viz"/>
+                        <geom size="0.0070" fromto=".009 .006 .0875   -.009 .009 .0875" type="capsule"/>
+                        <geom size="0.0070" fromto=".009 .009 .0875   -.009 .006 .0875" type="capsule"/>
+                        <geom size="0.0075" fromto=".009 .007 .0775   -.009 .010 .0775" type="capsule"/>
+                        <geom size="0.0075" fromto=".009 .010 .0775   -.009 .007 .0775" type="capsule"/>
+                        <geom size="0.0082" fromto=".009 .008 .0675   -.009 .011 .0675" type="capsule"/>
+                        <geom size="0.0082" fromto=".009 .011 .0675   -.009 .008 .0675" type="capsule"/>
+                        <geom size="0.0090" fromto=".009 .009 .0575   -.009 .012 .0575" type="capsule"/>
+                        <geom size="0.0090" fromto=".009 .012 .0575   -.009 .009 .0575" type="capsule"/>
+                        <geom size="0.0100" fromto=".009 .0105 .0475   -.009 .0135 .0475" type="capsule"/>
+                        <geom size="0.0100" fromto=".009 .0135 .0475   -.009 .0105 .0475" type="capsule"/>
+                        <geom size="0.0110" fromto=".009 .012 .035   -.009 .015 .035" type="capsule"/>
+                        <geom size="0.0110" fromto=".009 .015 .035   -.009 .012 .035" type="capsule"/>
+                        <geom size="0.0185 0.0120 0.0175" pos="0 0.014 0.015" type="box" euler=".03 0 0"/>
+                      </body>
+                      <body name="panda0_rightfinger" pos="0 0 0.1654" quat="0.92388 0 0 -0.382683" childclass="panda_finger">
+                        <inertial pos="1.57863e-05 -0.0118731 0.0434103" quat="0.705868 -0.0310348 0.0314925 0.706962" mass="0.0927059" diaginertia="6.57134e-05 6.09611e-05 1.09932e-05"/>
+                        <joint name="panda0_finger_joint2" axis="0 -1 0" type="slide" range="0 0.04" class="panda_finger"/>
+                        <geom type="mesh" quat="0 0 0 1" class="panda_viz" mesh="finger_viz"/>
+                        <geom size="0.0070" fromto=".009 -.006 .0875   -.009 -.009 .0875" type="capsule"/>
+                        <geom size="0.0070" fromto=".009 -.009 .0875   -.009 -.006 .0875" type="capsule"/>
+                        <geom size="0.0075" fromto=".009 -.007 .0775   -.009 -.010 .0775" type="capsule"/>
+                        <geom size="0.0075" fromto=".009 -.010 .0775   -.009 -.007 .0775" type="capsule"/>
+                        <geom size="0.0082" fromto=".009 -.008 .0675   -.009 -.011 .0675" type="capsule"/>
+                        <geom size="0.0082" fromto=".009 -.011 .0675   -.009 -.008 .0675" type="capsule"/>
+                        <geom size="0.0090" fromto=".009 -.009 .0575   -.009 -.012 .0575" type="capsule"/>
+                        <geom size="0.0090" fromto=".009 -.012 .0575   -.009 -.009 .0575" type="capsule"/>
+                        <geom size="0.0100" fromto=".009 -.0105 .0475   -.009 -.0135 .0475" type="capsule"/>
+                        <geom size="0.0100" fromto=".009 -.0135 .0475   -.009 -.0105 .0475" type="capsule"/>
+                        <geom size="0.0110" fromto=".009 -.012 .035   -.009 -.015 .035" type="capsule"/>
+                        <geom size="0.0110" fromto=".009 -.015 .035   -.009 -.012 .035" type="capsule"/>
+                        <geom size="0.0185 0.0120 0.0175" pos="0 -.014 0.015" type="box" euler="-.03 0 0"/>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+    </body>
+  </worldbody>
+</mujoco>
+

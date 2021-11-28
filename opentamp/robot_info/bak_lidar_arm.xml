@@ -1,0 +1,88 @@
+<mujoco model="pr2_model">
+    <worldbody name="base">
+        <body name="pr2" pos="0 0 0.5">
+            <body name="link1" pos="0 0.5 0.">
+                <joint axis="0 0 1" name="joint1" type="hinge" pos="0 -0.5 0" limited="false"/>
+                <geom name="armgeom1" type="box" size="0.1 0.4 0.2" mass="1" rgba="0 0 0 1" conaffinity="0"/>
+                <body name="link2" pos="0 1. 0.">
+                    <joint axis="0 0 1" name="joint2" type="hinge" pos="0 -0.5 0" limited="false" />
+                    <geom name="armgeom2" type="box" size="0.1 0.4 0.2" mass="1" rgba="0 0 0 1" conaffinity="0"/>
+                    <site name="body_1" pos="0.3 0 0" zaxis="1 0 0" />
+                    <site name="body_2" pos="0.276 0.195 -0.3" zaxis="0.924 0.0585 0" />
+                    <site name="body_3" pos="0.212 0.212 -0.3" zaxis="0.707 0.707 0" />
+                    <site name="body_4" pos="0.195 0.276 -0.3" zaxis="0.0585 0.924 0" />
+
+                    <site name="body_5" pos="0 0.3 -0.3" zaxis="0 1 0"/>
+                    <site name="body_6" pos="-0.195 0.276 -0.30" zaxis="-0.0585 0.924 0"/>
+                    <site name="body_7" pos="-0.212 0.212 -0.30" zaxis="-0.707 0.707 0"/>
+                    <site name="body_8" pos="-0.276 0.195 -0.30" zaxis="-0.924 0.0585 0"/>
+
+                    <site name="body_9" pos="-0.3 0 -0.3" zaxis="-1 0 0"/>
+                    <site name="body_10" pos="-0.276 -0.195 -0.30" zaxis="-0.924 -0.0585 0"/>
+                    <site name="body_11" pos="-0.212 -0.212 -0.30" zaxis="-0.707 -0.707 0"/>
+                    <site name="body_12" pos="-0.195 -0.276 -0.30" zaxis="-0.0585 -0.924 0"/>
+
+                    <site name="body_13" pos="0 -0.3 -0.3" zaxis="0 -1 0"/>
+                    <site name="body_14" pos="0.195 -0.276 -0.3" zaxis="0.0585 -0.924 0"/>
+                    <site name="body_15" pos="0.212 -0.212 -0.3" zaxis="0.707 -0.707 0"/>
+                    <site name="body_16" pos="0.276 -0.195 -0.3" zaxis="0.924 -0.0585 0"/>
+
+                    <site name="body_17" pos="0 1.1 -0.3" zaxis="0 1 0"/>
+
+                    <body name="ee" pos="0 0.5 0.">
+                        <geom name="ee_geom" type="cylinder" size="0.295 0.45" mass="1" rgba="0 0 0 1" conaffinity="0" pos="0 1. 0.4"/>
+                        <joint axis="0 0 1" name="wrist" type="hinge" pos="0 0 0" limited="false"/>
+                        <body name="right_finger" pos="-0.35 0.65 0" euler="0 0 -0.05">
+                            <site name="rf_1" pos="0. 0.35 -0.3" zaxis="0 1 0"/>
+                            <site name="rf_2" pos="-0.1 0.35 -0.3" zaxis="-1 1 0"/>
+                            <site name="rf_3" pos="-0.1 0.1 -0.3" zaxis="-1 0 0"/>
+                            <site name="rf_4" pos="-0.1 -0.1 -0.3" zaxis="-1 0 0"/>
+                            <joint name="right_finger_joint" axis="1 0 0" limited="true" range="-0.1 0.1" type="slide" solreflimit="0.02 0.25" solimplimit="0.99 1. 0.0001" pos="0 0 0" margin="0.02" />
+                            <geom pos="0 0 0" size="0.05 0.345 0.45" type="box" mass="0.5" friction="1.9 0.95 0.0005" rgba="0 0 0 1" conaffinity="0"/>
+                        </body>
+                        <body name="left_finger" pos="0.35 0.65 0" euler="0 0 0.05">
+                            <site name="lf_1" pos="0. 0.35 -0.3" zaxis="0 1 0"/>
+                            <site name="lf_2" pos="0.1 0.35 -0.3" zaxis="1 1 0"/>
+                            <site name="lf_3" pos="0.1 0.1 -0.3" zaxis="1 0 0"/>
+                            <site name="lf_4" pos="0.1 -0.1 -0.3" zaxis="1 0 0"/>
+                            <joint name="left_finger_joint" axis="-1 0 0" limited="true" range="-0.1 0.1" type="slide" solreflimit="0.02 0.25" solimplimit="0.99 1. 0.0001" pos="0 0 0" margin="0.02" />
+                            <geom pos="0 0 0" size="0.05 0.345 0.45" type="box" mass="0.5" friction="1.9 0.95 0.0005" rgba="0 0 0 1" conaffinity="0"/>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <velocity gear="3" kv="25" joint="joint1" name="joint1" ctrllimited="true" ctrlrange="-20 20" />
+        <velocity gear="2" kv="25" joint="joint2" name="joint2" ctrllimited="true" ctrlrange="-20 20" />
+        <velocity kv="30" joint="wrist" name="wrist" ctrllimited="true" ctrlrange="-20 20" />
+        <motor gear="30" joint="left_finger_joint" name="left_grip" ctrllimited="true" ctrlrange="-50 200" />
+        <motor gear="30" joint="right_finger_joint" name="right_grip" ctrllimited="true" ctrlrange="-50 200" />
+    </actuator>
+
+    <sensor>
+        <rangefinder name="lidar_1" site="body_1" cutoff="2.5" />
+        <rangefinder name="lidar_2" site="body_2" cutoff="2.5" />
+        <rangefinder name="lidar_5" site="body_5" cutoff="2.5" />
+        <rangefinder name="lidar_8" site="body_8" cutoff="2.5" />
+        <rangefinder name="lidar_9" site="body_9" cutoff="2.5" />
+        <rangefinder name="lidar_10" site="body_10" cutoff="2.5" />
+        <rangefinder name="lidar_11" site="body_11" cutoff="2.5" />
+        <rangefinder name="lidar_12" site="body_12" cutoff="2.5" />
+        <rangefinder name="lidar_13" site="body_13" cutoff="2.5" />
+        <rangefinder name="lidar_14" site="body_14" cutoff="2.5" />
+        <rangefinder name="lidar_15" site="body_15" cutoff="2.5" />
+        <rangefinder name="lidar_16" site="body_16" cutoff="2.5" />
+        <rangefinder name="llidar_1" site="lf_1" cutoff="2.5" />
+        <rangefinder name="llidar_2" site="lf_2" cutoff="2.5" />
+        <rangefinder name="llidar_3" site="lf_3" cutoff="2.5" />
+        <rangefinder name="llidar_4" site="lf_4" cutoff="2.5" />
+        <rangefinder name="rlidar_1" site="rf_1" cutoff="2.5" />
+        <rangefinder name="rlidar_2" site="rf_2" cutoff="2.5" />
+        <rangefinder name="rlidar_3" site="rf_3" cutoff="2.5" />
+        <rangefinder name="rlidar_4" site="rf_4" cutoff="2.5" />
+        <rangefinder name="far_forward" site="body_17" cutoff="2.5" />
+    </sensor>
+</mujoco>

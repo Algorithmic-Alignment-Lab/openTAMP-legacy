@@ -1,0 +1,114 @@
+<mujoco model="pr2_model">
+    <worldbody name="base">
+        <body name="pr2" pos="0 0 0.5">
+            <body name="link1" pos="0 0 0">
+                <joint axis="0 0 1" name="joint1" type="hinge" pos="0 0 0" limited="false"/>
+                <geom name="armgeom1" type="capsule" size="0.35" fromto="0 0 0 0 3 0" rgba="0 0 0 1" conaffinity="0"/>
+                <site name="link1_1" pos="0.105 0.5 0" zaxis="1 0 0" />
+                <site name="link1_2" pos="-0.105 0.5 0" zaxis="-1 0 0" />
+                <site name="link1_3" pos="0.105 1. 0" zaxis="1 0 0" />
+                <site name="link1_4" pos="-0.105 1. 0" zaxis="-1 0 0" />
+                <site name="link1_5" pos="-0.105 0.25 0" zaxis="-1 0 0" />
+                <site name="link1_6" pos="-0.105 0.75 0" zaxis="-1 0 0" />
+                <site name="link1_7" pos="0.105 0.25 0" zaxis="1 0 0" />
+                <site name="link1_8" pos="0.105 0.75 0" zaxis="1 0 0" />
+
+                <body name="link2" pos="0 3 0">
+                    <joint axis="0 0 1" name="joint2" type="hinge" pos="0 0 0" limited="true" range="-3. 3."/>
+                    <geom name="armgeom2" type="capsule" size="0.35" fromto="0 0 0 0 3 0"  rgba="0 0 0 1" conaffinity="0"/>
+                    <site name="link2_1" pos="0.105 0.5 0" zaxis="1 0 0" />
+                    <site name="link2_2" pos="-0.105 0.5 0" zaxis="-1 0 0" />
+                    <site name="link2_3" pos="0.105 0.25 0" zaxis="1 0 0" />
+                    <site name="link2_4" pos="-0.105 0.25 0" zaxis="-1 0 0" />
+                    <site name="link2_5" pos="0.105 0.75 0" zaxis="1 0 0" />
+                    <site name="link2_6" pos="-0.105 0.75 0" zaxis="-1 0 0" />
+                    <body name="ee_base" pos="0 3. 0.">
+                        <body name="ee" pos="0 0.55 0"></body>
+                        <body name="ee_far" pos="0 2. 0"></body>
+                        <geom name="ee_geom" type="sphere" size="0.2" rgba="0 0 0 1" conaffinity="0" pos="0 0 0"/>
+                        <joint axis="0 0 1" name="wrist" type="hinge" pos="0 0 0" limited="true" range="-3 3"/>
+                        <site name="ee_1" pos="0.21 0. 0" zaxis="1 0 0" />
+                        <site name="ee_2" pos="-0.21 0. 0" zaxis="-1 0 0" />
+                        <site name="ee_3" pos="0 0.205 0" zaxis="0 1 0" />
+                        <site name="ee_4" pos="0 0.75 0" zaxis="0 1 0" />
+                        <site name="ee_5" pos="0 1. 0" zaxis="0 1 0" />
+                        <body name="right_finger" pos="-0.4 0.1 0" euler="0 0 0">
+                            <site name="rf_1" pos="-0.25 0.4 0" zaxis="-1 0 0"/>
+                            <site name="rf_2" pos="-0.1 0.2 0" zaxis="-1.5 -1 0"/>
+                            <site name="rf_6" pos="-0.15 0.4 0" zaxis="1 0 0"/>
+                            <joint name="right_finger_joint" axis="1 0 0" limited="true" range="-0.4 0.4" type="slide" solreflimit="0.02 0.25" solimplimit="0.99 1. 0.0001" pos="-0.2 0.5 0" margin="0.01" />
+                            <geom pos="0 0 0" size="0.25" type="capsule" fromto="0 0 0 -0.2 0.5 0" friction="1.9 0.95 0.0005" rgba="0 0 0 1" conaffinity="0"/>
+                            <body name="right_finger_tip" pos="-0.2 0.5 0" euler="0 0 0">
+                                <site name="rf_3" pos="0.15 0.4 0" zaxis="-1 0 0"/>
+                                <site name="rf_4" pos="0.2 0.4 0" zaxis="0 1 0"/>
+                                <site name="rf_5" pos="0.1 0.2 0" zaxis="-1.5 1 0"/>
+                                <geom pos="0 0 0" size="0.25" type="capsule" fromto="0 0 0 0.3 0.6 0" friction="1.9 0.95 0.0005" rgba="0 0 0 1" conaffinity="0"/>
+                            </body>
+                        </body>
+                        <body name="left_finger" pos="0.4 0.1 0" euler="0 0 0.0">
+                            <site name="lf_1" pos="0.25 0.4 0" zaxis="1 0 0"/>
+                            <site name="lf_2" pos="0.1 0.2 0" zaxis="1.5 -1 0"/>
+                            <site name="lf_6" pos="0.15 0.4 0" zaxis="-1 0 0"/>
+                            <joint name="left_finger_joint" axis="-1 0 0" limited="true" range="-0.4 0.4" type="slide" solreflimit="0.02 0.25" solimplimit="0.99 1. 0.0001" pos="0.2 0.5 0" margin="0.01" />
+                            <geom pos="0 0 0"  type="capsule" size="0.25" fromto="0 0 0 0.2 0.5 0" friction="1.9 0.95 0.0005" rgba="0 0 0 1" conaffinity="0"/>
+                            <body name="left_finger_tip" pos="0.2 0.5 0" euler="0 0 0">
+                                <site name="lf_3" pos="-0.15 0.4 0" zaxis="1 0 0"/>
+                                <site name="lf_4" pos="-0.2 0.4 0" zaxis="0 1 0"/>
+                                <site name="lf_5" pos="-0.1 0.2 0" zaxis="1.5 1 0"/>
+                                <geom pos="0 0 0" size="0.25" type="capsule" fromto="0 0 0 -0.3 0.6 0" friction="1.9 0.95 0.0005" rgba="0 0 0 1" conaffinity="0"/>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <velocity gear="24" kv="800" joint="joint1" name="joint1" ctrllimited="true" ctrlrange="-128 128" />
+        <velocity gear="24" kv="800" joint="joint2" name="joint2" ctrllimited="true" ctrlrange="-128 128" />
+        <velocity gear="12" kv="400" joint="wrist" name="wrist" ctrllimited="true" ctrlrange="-64 64" />
+        <motor gear="128" joint="left_finger_joint" name="left_grip" ctrllimited="true" ctrlrange="-150 250" />
+        <motor gear="128" joint="right_finger_joint" name="right_grip" ctrllimited="true" ctrlrange="-150 250" />
+    </actuator>
+
+    <sensor>
+        <rangefinder name="lidar_1" site="link1_1" cutoff="2.5" />
+        <rangefinder name="lidar_2" site="link1_2" cutoff="2.5" />
+        <rangefinder name="lidar_3" site="link1_3" cutoff="2.5" />
+        <rangefinder name="lidar_4" site="link1_4" cutoff="2.5" />
+        <rangefinder name="lidar_5" site="link1_5" cutoff="2.5" />
+        <rangefinder name="lidar_6" site="link1_6" cutoff="2.5" />
+        <rangefinder name="lidar_7" site="link1_7" cutoff="2.5" />
+        <rangefinder name="lidar_8" site="link1_8" cutoff="2.5" />
+
+        <rangefinder name="lidar_9" site="link2_1" cutoff="2.5" />
+        <rangefinder name="lidar_10" site="link2_2" cutoff="2.5" />
+        <rangefinder name="lidar_11" site="link2_3" cutoff="2.5" />
+        <rangefinder name="lidar_12" site="link2_4" cutoff="2.5" />
+        <rangefinder name="lidar_13" site="link2_5" cutoff="2.5" />
+        <rangefinder name="lidar_14" site="link2_6" cutoff="2.5" />
+
+        <rangefinder name="lidar_15" site="ee_1" cutoff="2.5" />
+        <rangefinder name="lidar_16" site="ee_2" cutoff="2.5" />
+        <rangefinder name="lidar_17" site="ee_3" cutoff="2.5" />
+
+
+        <rangefinder name="lidar_18" site="lf_1" cutoff="2.5" />
+        <rangefinder name="lidar_19" site="lf_2" cutoff="2.5" />
+        <rangefinder name="lidar_20" site="lf_3" cutoff="2.5" />
+        <rangefinder name="lidar_21" site="lf_4" cutoff="2.5" />
+        <rangefinder name="lidar_22" site="lf_5" cutoff="2.5" />
+        <rangefinder name="lidar_23" site="lf_6" cutoff="2.5" />
+
+        <rangefinder name="lidar_24" site="rf_1" cutoff="2.5" />
+        <rangefinder name="lidar_25" site="rf_2" cutoff="2.5" />
+        <rangefinder name="lidar_26" site="rf_3" cutoff="2.5" />
+        <rangefinder name="lidar_27" site="rf_4" cutoff="2.5" />
+        <rangefinder name="lidar_28" site="rf_5" cutoff="2.5" />
+        <rangefinder name="lidar_29" site="rf_6" cutoff="2.5" />
+
+        <rangefinder name="lidar_30" site="ee_4" cutoff="2.5" />
+        <rangefinder name="lidar_31" site="ee_5" cutoff="2.5" />
+    </sensor>
+</mujoco>

@@ -13,10 +13,14 @@ To install and begin using OpenTAMP, follow these steps:
         sudo apt-get install python3.7
         sudo apt-get install python3.7-dev
         ```
+1. Make sure you have [tkinter installed](https://tkdocs.com/tutorial/install.html): `sudo apt-get install python3.7-tk`
+1. Install [MuJoCo](https://mujoco.org/)
+    1. Download the correct MuJoCo binary for your OS from [here](https://mujoco.org/download)
+    1. Extract the downloaded `mujoco210` directory into `~/.mujoco/mujoco210`
 1. Clone the OpenTAMP repository from GitHub to a folder of your choice: `https://github.com/Algorithmic-Alignment-Lab/OpenTAMP.git`
 1. `cd` into the newly-installed library and run `poetry shell`, then `poetry install`
     1. Now, you should have a nice [virtual environment](https://realpython.com/python-virtual-environments-a-primer/) with python configured to run OpenTAMP! Whenever you want to use this, simply `cd` into the OpenTAMP folder and then run `poetry shell`
-1. (ToDO: Instructions for installing mujoco and other necessary packages like baselines...)
+1. (ToDo: Instructions for installing mujoco and other necessary packages like baselines...)
 
 
 

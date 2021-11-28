@@ -19,6 +19,9 @@ numba = ">=0.52.0,<=0.53.1"
 dm-control = "^0.0.403778684"
 h5py = "^3.6.0"
 tensorflow = "<1.15"
+sco = { git = "https://github.com/Algorithmic-Alignment-Lab/sco.git", branch = "main" }
+matplotlib = "^3.5.0"
+gym = "^0.21.0"
 
 [tool.poetry.dev-dependencies]
 

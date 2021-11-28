@@ -1,0 +1,38 @@
+<mujoco model="empty">
+  <size njmax="795" nconmax="250" nstack="631875" />
+
+  <!--
+  <visual>
+    <map fogstart="1.5" fogend="3" />
+    <quality shadowsize="2048" />
+  </visual>
+    -->
+
+  <default>
+    <default class="viz">
+      <geom margin="0.001" contype="0" conaffinity="0" group="1" type="mesh" />
+    </default>
+    <!-- 
+    <geom solimp="0.99 0.99 0.01" solref="0.01 1" condim="6" />
+         -->
+    <geom solimp="0.99 0.99 0.01" solref="0.01 1" condim="4" />
+    <joint damping="1." />
+    <velocity ctrllimited="true" forcelimited="false" forcerange="-500 500" />
+  </default>
+
+  <worldbody>
+      <!--
+    <light directional="false" cutoff="90" exponent="1" diffuse="0.1 0.1 0.1" specular="0 0 0" pos="1 0 1.5" dir="-1 0 -2.5" ambient="0 0 0"/>
+        -->
+    <geom name="ground" type="plane" pos="0 0 -0.1" size="20 20 .05" rgba="1. 1. 1. 0.5" friction="1. 1. 1." />
+    <camera name="overhead_camera" pos="0 0.0 25" quat="0.707 0 0 -0.707" />
+  </worldbody>
+
+  <compiler angle="radian" coordinate="local" meshdir="/home/michaelmcdonald/Documents/BaxterGym/baxter_gym/" strippath="false" texturedir="textures/" /><option gravity="0 0 -9.81" integrator="Euler" cone="pyramidal"  noslip_iterations="0" solver="Newton" timestep="0.002" />
+
+  <actuator>
+  </actuator>
+
+  <sensor>
+  </sensor>
+</mujoco>

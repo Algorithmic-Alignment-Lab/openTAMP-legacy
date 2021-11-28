@@ -1,0 +1,29 @@
+<mujoco model="pr2_model">
+    <worldbody name="base">
+        <body name="pr2" pos="0 0 0.5">
+            <joint axis="1 0 0" name="robot_x" type="slide" pos="0 0 0" armature="0.01"/>
+            <joint axis="0 1 0" name="robot_y" type="slide" pos="0 0 0" armature="0.01"/>
+            <joint axis="0 0 1" name="robot_theta" type="hinge" pos="0 0 0" armature="0." limited="true" range="-3.15 3.15"/>
+            <geom name="pr2" type="cylinder" size="0.275 0.45" />
+            <inertial pos="0 0 0" mass="10" diaginertia="0.001 0.001 0.001" />
+            <body name="right_finger" pos="-0.35 0.65 0" euler="0 0 0">
+                <inertial pos="0 0 0" mass="3" diaginertia="0.001 0.001 0.001" />
+                <joint name="right_finger_joint" axis="1 0 0" limited="true" range="-0.1 0.1" type="slide" solreflimit="0.02 0.5" solimplimit="0.95 1. 0.00001" />
+                <geom pos="0 0 0" size="0.05 0.3495 0.45" type="box" friction="1.95 0.75 0.005" />
+            </body>
+            <body name="left_finger" pos="0.35 0.65 0" euler="0 0 0">
+                <inertial pos="0 0 0" mass="3" diaginertia="0.001 0.001 0.001" />
+                <joint name="left_finger_joint" axis="-1 0 0" limited="true" range="-0.1 0.1" type="slide" solreflimit="0.02 0.5" solimplimit="0.95 1. 0.00001" />
+                <geom pos="0 0 0" size="0.05 0.3495 0.45" type="box" friction="1.95 0.75 0.005" />
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <velocity kv="1500" joint="robot_x" name="robot_x" ctrllimited="true" ctrlrange="-20 20" />
+        <velocity kv="1500" joint="robot_y" name="robot_y" ctrllimited="true" ctrlrange="-20 20" />
+        <velocity kv="200" joint="robot_theta" name="robot_theta" ctrllimited="true" ctrlrange="-20 20" />
+        <velocity kv="150" joint="left_finger_joint" name="left_grip" ctrllimited="true" ctrlrange="-20 20" />
+        <velocity kv="150" joint="right_finger_joint" name="right_grip" ctrllimited="true" ctrlrange="-20 20" />
+    </actuator>
+</mujoco>
