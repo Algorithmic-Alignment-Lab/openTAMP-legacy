@@ -10,8 +10,6 @@ from scipy.cluster.vq import kmeans2 as kmeans
 from scipy.stats import multivariate_normal
 from std_msgs.msg import Float32MultiArray, String
 
-from gps.sample.sample_list import SampleList
-
 from tamp_ros.msg import *
 from tamp_ros.srv import *
 

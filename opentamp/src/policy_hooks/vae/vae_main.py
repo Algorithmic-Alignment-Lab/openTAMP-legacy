@@ -25,11 +25,7 @@ from roslaunch.parent import ROSLaunchParent
 import rosgraph
 import rospy
 
-# from gps.algorithm.policy_opt.policy_opt_tf import PolicyOptTf
-# from gps.algorithm.policy_opt.tf_model_example import tf_network
-from gps.algorithm.cost.cost_sum import CostSum
 from gps.algorithm.cost.cost_utils import *
-from gps.sample.sample_list import SampleList
 
 # from policy_hooks.control_attention_policy_opt import ControlAttentionPolicyOpt
 from policy_hooks.mcts_explore import MCTSExplore

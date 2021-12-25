@@ -21,12 +21,7 @@ import core.util_classes.common_constants as const
 import pybullet as P
 
 
-# from gps.agent.agent import Agent
-from gps.agent.agent_utils import generate_noise
-from gps.agent.config import AGENT
-#from gps.sample.sample import Sample
 from policy_hooks.sample_list import SampleList
-
 
 import core.util_classes.items as items
 from core.util_classes.namo_predicates import dsafe, NEAR_TOL, dmove, HLGraspFailed, HLTransferFailed

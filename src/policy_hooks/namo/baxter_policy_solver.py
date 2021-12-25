@@ -17,7 +17,6 @@ from policy_hooks.namo.vector_include import *
 from policy_hooks.utils.load_task_definitions import *
 from policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
 # import policy_hooks.namo.namo_hyperparams as namo_hyperparams
-# import policy_hooks.namo.namo_optgps_hyperparams as namo_hyperparams
 from policy_hooks.utils.policy_solver_utils import *
 from policy_hooks.baxter.fold_prob import *
 from policy_hooks.task_net import tf_binary_network, tf_classification_network

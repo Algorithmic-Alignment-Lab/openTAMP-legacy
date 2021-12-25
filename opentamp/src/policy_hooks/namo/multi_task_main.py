@@ -21,7 +21,6 @@ import traceback
 # Add gps/python to path so that imports work.
 sys.path.append('/'.join(str.split(__file__, '/')[:-2]))
 from gps.gui.gps_training_gui import GPSTrainingGUI
-from gps.algorithm.traj_opt.traj_opt_pi2 import TrajOptPI2
 from gps.utility.data_logger import DataLogger
 from gps.sample.sample_list import SampleList
 
