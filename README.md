@@ -20,7 +20,7 @@ To install and begin using OpenTAMP, follow these steps:
 1. Clone the OpenTAMP repository from GitHub to a folder of your choice: `https://github.com/Algorithmic-Alignment-Lab/OpenTAMP.git`
 1. `cd` into the newly-installed library and run `poetry shell`, then `poetry install`
     1. Now, you should have a nice [virtual environment](https://realpython.com/python-virtual-environments-a-primer/) with python configured to run OpenTAMP! Whenever you want to use this, simply `cd` into the OpenTAMP folder and then run `poetry shell`
-1. (ToDo: Instructions for installing mujoco and other necessary packages like baselines...)
+1. (ToDo: Instructions for installing necessary packages like baselines...)
 
 
 

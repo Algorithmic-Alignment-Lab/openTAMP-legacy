@@ -21,8 +21,6 @@ else:
     import pybullet as P
 
 
-from gps.agent.agent_utils import generate_noise
-from gps.agent.config import AGENT
 from policy_hooks.sample_list import SampleList
 
 import opentamp
