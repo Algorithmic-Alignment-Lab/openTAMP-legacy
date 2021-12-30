@@ -1,10 +1,8 @@
 # OpenTAMP
-This README assumes the installation is happenning in ubuntu >= 14 with python3.5
-
+OpenTAMP is an open-source library for optimization-based Task and Motion Planning (TAMP), and [Guided Imitation of TAMP](https://openreview.net/forum?id=-JwmfQC6IRt) with Python. OpenTAMP aims to make defining and solving new TAMP problems both easy and straightforward, even for users familiar with only the high-level ideas behind TAMP.
 
 ## Installation and Setup
-
-To install and begin using OpenTAMP, follow these steps:
+To install and begin using OpenTAMP on an Ubuntu (>14.04) Linux Machine, follow these steps:
 1. Install Poetry by following instructions from [here](https://python-poetry.org/docs/#installation)
 1. If you're on Ubuntu 20.04 or later, make sure you have Python 3.7 available. Run the below commands if you're not sure
     1. ```
@@ -20,8 +18,9 @@ To install and begin using OpenTAMP, follow these steps:
 1. Clone the OpenTAMP repository from GitHub to a folder of your choice: `https://github.com/Algorithmic-Alignment-Lab/OpenTAMP.git`
 1. `cd` into the newly-installed library and run `poetry shell`, then `poetry install`
     1. Now, you should have a nice [virtual environment](https://realpython.com/python-virtual-environments-a-primer/) with python configured to run OpenTAMP! Whenever you want to use this, simply `cd` into the OpenTAMP folder and then run `poetry shell`
-1. (ToDo: Instructions for installing necessary packages like baselines...)
+1. (Optional) If you'd like to use [Gurobi](https://www.gurobi.com/) as a backend solver for motion-planning problems, then follow steps [here](https://www.gurobi.com/wp-content/plugins/hd_documentations/content/pdf/quickstart_mac_8.1.pdf) to obtain and activate a license (note: free licenses are available for students and academic users!)
 
+**ToDo: Might need to add baselines and h-baselines because they're currently in setup.sh**
 
 
 ## Verify planning
