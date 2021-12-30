@@ -3,7 +3,7 @@ from core.util_classes.openrave_body import OpenRAVEBody
 import core.util_classes.baxter_constants as const
 from policy_hooks.sample import Sample
 from policy_hooks.utils.policy_solver_utils import *
-from sco.expr import Expr, AffExpr, EqExpr, LEqExpr
+from sco_py.expr import Expr, AffExpr, EqExpr, LEqExpr
 
 import numpy as np
 

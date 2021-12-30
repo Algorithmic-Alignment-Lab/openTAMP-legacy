@@ -2,7 +2,7 @@ import numpy as np
 
 from core.util_classes.namo_predicates import ColObjPred
 from pma import backtrack_ll_solver_gurobi
-from sco.expr import BoundExpr
+from sco_py.expr import BoundExpr
 
 
 class NAMOSolverGurobi(backtrack_ll_solver_gurobi.BacktrackLLSolver):

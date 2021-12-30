@@ -1,6 +1,6 @@
 import numpy as np
 
-from sco.expr import BoundExpr, QuadExpr, AffExpr
+from sco_py.expr import BoundExpr, QuadExpr, AffExpr
 from pma import backtrack_ll_solver_gurobi as backtrack_ll_solver
 from pma import backtrack_ll_solver_OSQP as backtrack_ll_solver_OSQP
 from core.util_classes.namo_grip_predicates import (

@@ -1,7 +1,7 @@
-from sco.sco_gurobi.prob import Prob
-from sco.sco_gurobi.variable import Variable
-from sco.expr import BoundExpr, QuadExpr, AffExpr
-from sco.sco_gurobi.solver import Solver
+from sco_py.sco_gurobi.prob import Prob
+from sco_py.sco_gurobi.variable import Variable
+from sco_py.expr import BoundExpr, QuadExpr, AffExpr
+from sco_py.sco_gurobi.solver import Solver
 from openravepy import matrixFromAxisAngle
 from core.internal_repr.parameter import Object
 from core.util_classes import (

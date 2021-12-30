@@ -13,7 +13,7 @@ import scipy.interpolate
 
 import xml.etree.ElementTree as xml
 
-from sco.expr import *
+from sco_py.expr import *
 
 import core.util_classes.common_constants as common_const
 import pma.backtrack_ll_solver_gurobi as bt_ll

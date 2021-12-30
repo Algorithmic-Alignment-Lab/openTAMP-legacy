@@ -4,10 +4,10 @@ import numpy as np
 
 import gurobipy as grb
 
-from sco.expr import BoundExpr, QuadExpr, AffExpr
-from sco.prob import Prob
-from sco.solver import Solver
-from sco.variable import Variable
+from sco_py.expr import BoundExpr, QuadExpr, AffExpr
+from sco_py.prob import Prob
+from sco_py.solver import Solver
+from sco_py.variable import Variable
 
 from gps.algorithm.cost.cost_utils import *
 

@@ -29,14 +29,14 @@ POSSIBLE_LEFT_BLOCK_REGION_LOCS = np.array([
     np.array(list(itertools.product(list(range(62, 74, 2)), list(range(10, 30, 2))))).astype(np.float64) / 100.,
     np.array(list(itertools.product(list(range(47, 57, 2)), list(range(40, 65, 2))))).astype(np.float64) / 100.,
     np.array(list(itertools.product(list(range(62, 74, 2)), list(range(40, 65, 2))))).astype(np.float64) / 100.,
-])
+], dtype=object)
 
 POSSIBLE_RIGHT_BLOCK_REGION_LOCS = np.array([
     np.array(list(itertools.product(list(range(47, 57, 2)), list(range(-30, -10, 2))))).astype(np.float64) / 100.,
     np.array(list(itertools.product(list(range(62, 74, 2)), list(range(-30, -10, 2))))).astype(np.float64) / 100.,
     np.array(list(itertools.product(list(range(47, 57, 2)), list(range(-65, -40, 2))))).astype(np.float64) / 100.,
     np.array(list(itertools.product(list(range(62, 74, 2)), list(range(-65, -40, 2))))).astype(np.float64) / 100.,
-])
+], dtype=object)
 
 class BaxterBlockStackEnv(BaxterMJCEnv):
     def __init__(self):

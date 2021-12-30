@@ -1,6 +1,5 @@
 import itertools
 import os
-import random
 from opentamp.envs import MJCEnv
 
 from core.parsing import parse_domain_config, parse_problem_config

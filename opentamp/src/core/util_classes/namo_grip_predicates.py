@@ -4,7 +4,7 @@ from core.util_classes.common_predicates import ExprPredicate
 from core.util_classes.namo_predicates import NEAR_TOL
 from core.util_classes.openrave_body import OpenRAVEBody
 from errors_exceptions import PredicateException
-from sco.expr import Expr, AffExpr, EqExpr, LEqExpr
+from sco_py.expr import Expr, AffExpr, EqExpr, LEqExpr
 
 import numpy as np
 import tensorflow as tf
@@ -74,14 +74,14 @@ if USE_TF:
     def init_tf_graph():
         cuda_vis = os.environ.get("CUDA_VISIBLE_DEVICES", "-1")
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-        config = tf.ConfigProto(
+        config = tf.compat.v1.ConfigProto(
             inter_op_parallelism_threads=1,
             intra_op_parallelism_threads=1,
             allow_soft_placement=True,
             device_count={"GPU": 0},
         )
         config.gpu_options.allow_growth = True
-        TF_SESS[0] = tf.Session(config=config)
+        TF_SESS[0] = tf.compat.v1.Session(config=config)
         os.environ["CUDA_VISIBLE_DEVICES"] = cuda_vis
 
         thetadir_tf_in = tf.placeholder(float, (8, 1), name="thetadir_in")

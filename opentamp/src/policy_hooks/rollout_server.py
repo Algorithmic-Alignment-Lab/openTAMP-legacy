@@ -11,7 +11,7 @@ from software_constants import *
 
 from PIL import Image
 
-from sco.expr import *
+from sco_py.expr import *
 from core.internal_repr.plan import Plan
 from policy_hooks.sample import Sample
 from policy_hooks.sample_list import SampleList

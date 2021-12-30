@@ -22,7 +22,7 @@ from pma import backtrack_ll_solver_gurobi as bt_ll
 from pma.hl_solver import *
 from pma.pr_graph import *
 from pma.robosuite_solver import RobotSolver
-from sco.expr import *
+from sco_py.expr import *
 import random
 
 

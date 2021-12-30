@@ -1,7 +1,7 @@
 import numpy as np
 import pybullet as p
 
-from sco.expr import BoundExpr, QuadExpr, AffExpr
+from sco_py.expr import BoundExpr, QuadExpr, AffExpr
 from core.internal_repr.parameter import Object
 from core.util_classes.matrix import Vector
 import core.util_classes.common_constants as const

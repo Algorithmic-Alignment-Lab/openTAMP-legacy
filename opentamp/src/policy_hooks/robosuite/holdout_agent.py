@@ -15,7 +15,7 @@ from scipy.spatial.transform import Rotation
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import xml.etree.ElementTree as xml
 
-from sco.expr import *
+from sco_py.expr import *
 
 import core.util_classes.common_constants as const
 import pybullet as P

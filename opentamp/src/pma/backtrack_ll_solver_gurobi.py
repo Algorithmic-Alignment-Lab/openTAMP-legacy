@@ -9,10 +9,10 @@ from core.util_classes.matrix import Vector
 from core.util_classes.openrave_body import OpenRAVEBody
 from core.util_classes.viewer import OpenRAVEViewer
 from pma.ll_solver_gurobi import LLParam, LLSolver
-from sco.expr import AffExpr, BoundExpr, QuadExpr
-from sco.sco_gurobi.prob import Prob
-from sco.sco_gurobi.solver import Solver
-from sco.sco_gurobi.variable import Variable
+from sco_py.expr import AffExpr, BoundExpr, QuadExpr
+from sco_py.sco_gurobi.prob import Prob
+from sco_py.sco_gurobi.solver import Solver
+from sco_py.sco_gurobi.variable import Variable
 
 GRB = grb.GRB
 
