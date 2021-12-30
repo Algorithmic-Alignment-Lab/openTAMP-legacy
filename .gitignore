@@ -22,4 +22,4 @@ src/exp_logs/*
 src/experiment_logs/*
 .ruby-version
 .vscode
-
+temp/*

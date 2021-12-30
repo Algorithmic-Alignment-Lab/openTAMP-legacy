@@ -24,7 +24,7 @@ from opentamp.util_classes import transform_utils as T
 
 BASE_XML = opentamp.__path__._last_parent_path[1] + '/opentamp'+'/robot_info/empty.xml'
 ENV_XML = opentamp.__path__._last_parent_path[1] + '/opentamp'+'/robot_info/current_empty.xml'
-SPECIFIC_ENV_XML = opentamp.__path__._last_parent_path[1] + '/opentamp'+'/local/current_{0}.xml'
+SPECIFIC_ENV_XML = opentamp.__path__._last_parent_path[1] + '/temp/current_{0}.xml'
 
 _MAX_FRONTBUFFER_SIZE = 2048
 _CAM_WIDTH = 200
@@ -613,11 +613,11 @@ class MJCEnv(Env):
     def record_video(self, fname, actions=None, states=None, height=0, width=0, mode='position'):
         if not self.load_render:
             raise AssertionError('Cannot record video if the renderer is not loaded')
-        elif actiosn is None and states is None:
+        elif actions is None and states is None:
             raise AssertionError('Must pass either action or state trajectory to record video')
 
         ims = []
-        buf = actions if actios is not None else states
+        buf = actions if actions is not None else states
         for step in buf:
             if actions is not None: self.step(step, mode=mode)
             if states is not None: self.set_state(step)
