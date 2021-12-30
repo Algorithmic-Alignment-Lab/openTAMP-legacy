@@ -16,7 +16,7 @@ import core.util_classes.hsr_constants as constants
 from pma import bactrack_ll_solver_gurobi
 
 
-class HSRSolver(backtrack_ll_solver_gurobi.BacktrackLLSolver):
+class HSRSolver(backtrack_ll_solver_gurobi.BacktrackLLSolverGurobi):
     def get_resample_param(self, a):
         if a.name == "moveto":
             ## find possible values for the final pose

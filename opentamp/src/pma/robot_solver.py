@@ -17,7 +17,7 @@ PANDA_REF_JNTS = [-0.30, -0.4, 0.28, -2.5, 0.13, 1.87, 0.91]
 #PANDA_REF_JNTS = [0.5, -0.8, 1.0, -2.5, 0.5, 1.87, 0.2]
 PANDA_REF_JNTS = [0.5, -0.8, 0.9, -2.3, 0.5, 1.6, 0.2]
 
-class RobotSolverGurobi(backtrack_ll_solver_gurobi.BacktrackLLSolver):
+class RobotSolverGurobi(backtrack_ll_solver_gurobi.BacktrackLLSolverGurobi):
     def get_resample_param(self, a):
         if a.name.lower().find('move') < 0:
             if a.name.lower().find('grasp') >= 0: return [a.params[0], a.params[1]]

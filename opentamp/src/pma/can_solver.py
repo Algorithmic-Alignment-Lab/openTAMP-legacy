@@ -23,7 +23,7 @@ GRIPPER_OPEN_VAL = 0.02
 GRIPPER_CLOSE_VAL = 0.015
 
 
-class CanSolver(backtrack_ll_solver_gurobi.BacktrackLLSolver):
+class CanSolver(backtrack_ll_solver_gurobi.BacktrackLLSolverGurobi):
     def get_rs_param(self, a):
         if a.name == "moveto":
             ## moveto: (?robot - Robot ?start - RobotPose ?end - RobotPose)

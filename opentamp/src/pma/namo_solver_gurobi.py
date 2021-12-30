@@ -5,7 +5,7 @@ from pma import backtrack_ll_solver_gurobi
 from sco_py.expr import BoundExpr
 
 
-class NAMOSolverGurobi(backtrack_ll_solver_gurobi.BacktrackLLSolver):
+class NAMOSolverGurobi(backtrack_ll_solver_gurobi.BacktrackLLSolverGurobi):
     def get_resample_param(self, a):
         return a.params[0]  # Experiment with avoiding robot pose symbols
 

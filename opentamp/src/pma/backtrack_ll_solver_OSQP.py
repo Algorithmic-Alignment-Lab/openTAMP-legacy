@@ -27,7 +27,7 @@ BASE_SAMPLE_SIZE = 5
 DEBUG = True
 
 
-class BacktrackLLSolver_OSQP(LLSolverOSQP):
+class BacktrackLLSolverOSQP(LLSolverOSQP):
     def __init__(self, early_converge=False, transfer_norm="min-vel"):
         # To avoid numerical difficulties during optimization, try keep
         # range of coefficeint within 1e9

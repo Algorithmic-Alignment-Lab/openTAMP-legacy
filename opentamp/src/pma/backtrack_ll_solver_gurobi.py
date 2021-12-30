@@ -30,7 +30,7 @@ BASE_SAMPLE_SIZE = 5
 DEBUG = False
 
 
-class BacktrackLLSolver(LLSolver):
+class BacktrackLLSolverGurobi(LLSolver):
     def __init__(self, early_converge=False, transfer_norm='min-vel'):
         # To avoid numerical difficulties during optimization, try keep
         # range of coefficeint within 1e9

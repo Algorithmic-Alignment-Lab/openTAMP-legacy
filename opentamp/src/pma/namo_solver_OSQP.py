@@ -5,7 +5,7 @@ from pma import backtrack_ll_solver_OSQP
 from sco_py.expr import BoundExpr
 
 
-class NAMOSolver_OSQP(backtrack_ll_solver_OSQP.BacktrackLLSolver_OSQP):
+class NAMOSolver_OSQP(backtrack_ll_solver_OSQP.BacktrackLLSolverOSQP):
     def get_resample_param(self, a):
         return a.params[0]  # Experiment with avoiding robot pose symbols
 

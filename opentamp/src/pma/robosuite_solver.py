@@ -14,7 +14,7 @@ REF_JNTS = np.array([0, -np.pi / 3, 0, np.pi / 3, 0, np.pi / 2, 0])
 # REF_JNTS = np.array([0, -np.pi/3, 0, np.pi/6, 0, 2*np.pi/3, 0])
 
 
-class RobotSolver(backtrack_ll_solver_gurobi.BacktrackLLSolver):
+class RobotSolver(backtrack_ll_solver_gurobi.BacktrackLLSolverGurobi):
     def get_resample_param(self, a):
         if a.name.find("move") < 0 and a.name.find("grasp") >= 0:
             return [a.params[0], a.params[1]]

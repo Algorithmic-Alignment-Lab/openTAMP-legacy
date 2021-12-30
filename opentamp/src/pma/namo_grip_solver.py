@@ -12,7 +12,7 @@ from core.util_classes.namo_grip_predicates import (
     BoxObjPred,
 )
 
-class NAMOSolverGurobi(backtrack_ll_solver.BacktrackLLSolver):
+class NAMOSolverGurobi(backtrack_ll_solver.BacktrackLLSolverGurobi):
     def get_resample_param(self, a):
         return a.params[0]  # Experiment with avoiding robot pose symbols
 
@@ -273,7 +273,7 @@ class NAMOSolverGurobi(backtrack_ll_solver.BacktrackLLSolver):
                 self._prob.add_obj_expr(bexpr)
         return objs
 
-class NAMOSolverOSQP(backtrack_ll_solver_OSQP.BacktrackLLSolver_OSQP):
+class NAMOSolverOSQP(backtrack_ll_solver_OSQP.BacktrackLLSolverOSQP):
     def get_resample_param(self, a):
         return a.params[0]  # Experiment with avoiding robot pose symbols
 
