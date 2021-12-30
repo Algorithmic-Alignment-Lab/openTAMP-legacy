@@ -84,7 +84,7 @@ if USE_TF:
         TF_SESS[0] = tf.compat.v1.Session(config=config)
         os.environ["CUDA_VISIBLE_DEVICES"] = cuda_vis
 
-        thetadir_tf_in = tf.placeholder(float, (8, 1), name="thetadir_in")
+        thetadir_tf_in = tf.compat.v1.placeholder(float, (8, 1), name="thetadir_in")
         tf_cache["thetadir_tf_in"] = thetadir_tf_in
         thetadir_tf_disp = thetadir_tf_in[4:6] - thetadir_tf_in[:2]
         tf_cache["thetadir_tf_disp"] = thetadir_tf_disp
@@ -113,8 +113,8 @@ if USE_TF:
         thetadir_tf_revgrads = tf.gradients(thetadir_tf_opp, thetadir_tf_in)[0]
         tf_cache["thetadir_tf_revgrads"] = thetadir_tf_revgrads
 
-        tf_cache["bump_in"] = tf.placeholder(float, (4, 1), name="bump_in")
-        tf_cache["bump_radius"] = tf.placeholder(float, (), name="bump_radius")
+        tf_cache["bump_in"] = tf.compat.v1.placeholder(float, (4, 1), name="bump_in")
+        tf_cache["bump_radius"] = tf.compat.v1.placeholder(float, (), name="bump_radius")
         pos1 = tf_cache["bump_in"][:2]
         pos2 = tf_cache["bump_in"][2:]
         tf_cache["bump_diff"] = tf.reduce_sum((pos1 - pos2) ** 2)
@@ -130,11 +130,11 @@ if USE_TF:
             0
         ]
 
-        tf_cache["door_bump_in"] = tf.placeholder(float, (5, 1), name="door_bump_in")
-        tf_cache["door_bump_radius"] = tf.placeholder(
+        tf_cache["door_bump_in"] = tf.compat.v1.placeholder(float, (5, 1), name="door_bump_in")
+        tf_cache["door_bump_radius"] = tf.compat.v1.placeholder(
             float, (), name="door_bump_radius"
         )
-        tf_cache["door_len"] = tf.placeholder(float, (), name="door_len")
+        tf_cache["door_len"] = tf.compat.v1.placeholder(float, (), name="door_len")
         pos1 = tf_cache["door_bump_in"][:2]
         theta = tf_cache["door_bump_in"][2]
         pos2 = tf_cache["door_bump_in"][3:]

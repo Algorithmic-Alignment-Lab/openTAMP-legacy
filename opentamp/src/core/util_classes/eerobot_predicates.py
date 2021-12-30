@@ -33,16 +33,16 @@ if USE_TF:
 
     def _get_arm_jac(robot_name, njnts):
         arm_jac = []
-        world_dir = tf.placeholder(float, (3,), "{}_world_dir".format(robot_name))
-        obj_dir = tf.placeholder(float, (3,), "{}_obj_dir".format(robot_name))
-        pos = tf.placeholder(float, (3,), "{}_pos".format(robot_name, n))
-        obj_pos = tf.placeholder(float, (3,), "{}_obj_pos".format(robot_name, n))
+        world_dir = tf.compat.v1.placeholder(float, (3,), "{}_world_dir".format(robot_name))
+        obj_dir = tf.compat.v1.placeholder(float, (3,), "{}_obj_dir".format(robot_name))
+        pos = tf.compat.v1.placeholder(float, (3,), "{}_pos".format(robot_name, n))
+        obj_pos = tf.compat.v1.placeholder(float, (3,), "{}_obj_pos".format(robot_name, n))
         axes = [
-            tf.placeholder(float, (3,), "{}_axis_{}".format(robot_name, n))
+            tf.compat.v1.placeholder(float, (3,), "{}_axis_{}".format(robot_name, n))
             for n in range(njnts)
         ]
         jnt_pos = [
-            tf.placeholder(float, (3,), "{}_jnt_{}".format(robot_name, n))
+            tf.compat.v1.placeholder(float, (3,), "{}_jnt_{}".format(robot_name, n))
             for n in range(njnts)
         ]
 
@@ -89,13 +89,13 @@ if USE_TF:
     def init_tf_graph():
         cuda_vis = os.environ.get("CUDA_VISIBLE_DEVICES", "-1")
         # os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-        config = tf.ConfigProto(
+        config = tf.compat.v1.ConfigProto(
             inter_op_parallelism_threads=1,
             intra_op_parallelism_threads=1,  # device_count={'GPU': 0},
             allow_soft_placement=True,
         )
         config.gpu_options.allow_growth = True
-        TF_SESS[0] = tf.Session(config=config)
+        TF_SESS[0] = tf.compat.v1.Session(config=config)
         os.environ["CUDA_VISIBLE_DEVICES"] = cuda_vis
 
 

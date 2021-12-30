@@ -46,7 +46,7 @@ class LatentOffsetPredictor(object):
         self.y = y
         self.pred = out
         self.loss = tf.reduce_sum((self.pred - y)**2, axis=1)
-        self.lr = tf.placeholder(tf.float32)
+        self.lr = tf.compat.v1.placeholder(tf.float32)
         self.opt = tf.train.AdamOptimizer(self.lr)
         self.train_op = self.opt.minimize(self.loss)
 
@@ -110,7 +110,7 @@ class RewardTrainer(object):
             gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=self.gpu_fraction)
         else:
             gpu_options = tf.GPUOptions(allow_growth=True)
-        self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options, allow_soft_placement=True))
+        self.sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=gpu_options, allow_soft_placement=True))
         init_op = tf.initialize_all_variables()
         variables = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES)
         self.saver = tf.train.Saver(variables)
@@ -209,13 +209,13 @@ class RewardTrainer(object):
 
     def init_network(self):
         import tensorflow as tf
-        self.x1_in = tf.placeholder(tf.float32, shape=[None]+list(self.obs_dims))
-        self.x2_in = tf.placeholder(tf.float32, shape=[None]+list(self.obs_dims))
+        self.x1_in = tf.compat.v1.placeholder(tf.float32, shape=[None]+list(self.obs_dims))
+        self.x2_in = tf.compat.v1.placeholder(tf.float32, shape=[None]+list(self.obs_dims))
         self.x_in = tf.concat([self.x1_in, self.x2_in], axis=1)
-        self.y = tf.placeholder(tf.float32, shape=[None])
+        self.y = tf.compat.v1.placeholder(tf.float32, shape=[None])
 
-        self.task_in = tf.placeholder(tf.float32, shape=[None, self.task_dim])
-        self.training = tf.placeholder(tf.bool)
+        self.task_in = tf.compat.v1.placeholder(tf.float32, shape=[None, self.task_dim])
+        self.training = tf.compat.v1.placeholder(tf.bool)
 
         self.net = LatentOffsetPredictor(self.x1_in, self.x2_in, self.y, reuse=False)
 

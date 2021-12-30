@@ -74,22 +74,22 @@ if USE_TF:
             return TF_SESS[0]
         cuda_vis = os.environ.get("CUDA_VISIBLE_DEVICES", "")
         os.environ["CUDA_VISIBLE_DEVICES"] = ""
-        config = tf.ConfigProto(
+        config = tf.compat.v1.ConfigProto(
             inter_op_parallelism_threads=1,
             intra_op_parallelism_threads=1,
             allow_soft_placement=True,
             device_count={"GPU": 0},
         )
         config.gpu_options.allow_growth = True
-        TF_SESS[0] = tf.Session(config=config)
+        TF_SESS[0] = tf.compat.v1.Session(config=config)
         os.environ["CUDA_VISIBLE_DEVICES"] = cuda_vis
         return TF_SESS[0]
 
     def init_tf_graph():
         init_sess()
 
-        tf_cache["bump_in"] = tf.placeholder(float, (4, 1), name="bump_in")
-        tf_cache["bump_radius"] = tf.placeholder(float, (), name="bump_radius")
+        tf_cache["bump_in"] = tf.compat.v1.placeholder(float, (4, 1), name="bump_in")
+        tf_cache["bump_radius"] = tf.compat.v1.placeholder(float, (), name="bump_radius")
         pos1 = tf_cache["bump_in"][:2]
         pos2 = tf_cache["bump_in"][2:]
         tf_cache["bump_diff"] = tf.reduce_sum((pos1 - pos2) ** 2)

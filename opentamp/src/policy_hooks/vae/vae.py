@@ -137,7 +137,7 @@ class VAE(object):
             gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=self.gpu_fraction)
         else:
             gpu_options = tf.GPUOptions(allow_growth=True)
-        self.sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options, allow_soft_placement=True))
+        self.sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=gpu_options, allow_soft_placement=True))
         init_op = tf.initialize_all_variables()
         variables = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope=self.scope)
         self.saver = tf.train.Saver(variables)
@@ -269,22 +269,22 @@ class VAE(object):
 
     def init_network(self):
         import tensorflow as tf
-        self.x_in = tf.placeholder(tf.float32, shape=[self.batch_size*self.T]+list(self.obs_dims))
-        self.latent_in = tf.placeholder(tf.float32, shape=[1, 1, LATENT_DIM])
-        self.task_in = tf.placeholder(tf.float32, shape=[self.batch_size*self.T]+[self.task_dim])
-        self.latent_task_in = tf.placeholder(tf.float32, shape=[1, 1, self.task_dim])
-        self.offset_in = tf.placeholder(tf.float32, shape=[self.batch_size*self.T]+list(self.obs_dims))
-        self.before_offset_in = tf.placeholder(tf.float32, shape=[self.batch_size*self.T]+list(self.obs_dims))
-        self.training = tf.placeholder(tf.bool)
+        self.x_in = tf.compat.v1.placeholder(tf.float32, shape=[self.batch_size*self.T]+list(self.obs_dims))
+        self.latent_in = tf.compat.v1.placeholder(tf.float32, shape=[1, 1, LATENT_DIM])
+        self.task_in = tf.compat.v1.placeholder(tf.float32, shape=[self.batch_size*self.T]+[self.task_dim])
+        self.latent_task_in = tf.compat.v1.placeholder(tf.float32, shape=[1, 1, self.task_dim])
+        self.offset_in = tf.compat.v1.placeholder(tf.float32, shape=[self.batch_size*self.T]+list(self.obs_dims))
+        self.before_offset_in = tf.compat.v1.placeholder(tf.float32, shape=[self.batch_size*self.T]+list(self.obs_dims))
+        self.training = tf.compat.v1.placeholder(tf.bool)
 
         if len(self.obs_dims) == 1:
             pass
         else:
             pass
 
-        self.fc_in = None # tf.placeholder(tf.float32, shape=[None, self.task_dim])
-        self.offset_fc_in = None #tf.placeholder(tf.float32, shape=[None, self.task_dim])
-        self.far_offset_fc_in = None # tf.placeholder(tf.float32, shape=[None, self.task_dim])
+        self.fc_in = None # tf.compat.v1.placeholder(tf.float32, shape=[None, self.task_dim])
+        self.offset_fc_in = None #tf.compat.v1.placeholder(tf.float32, shape=[None, self.task_dim])
+        self.far_offset_fc_in = None # tf.compat.v1.placeholder(tf.float32, shape=[None, self.task_dim])
 
         # mask = tf.ones((self.batch_size, self.T))
         # mask[:,-1] = 0
@@ -446,7 +446,7 @@ class VAE(object):
         #     far_offset_loss = -tf.reduce_sum((self.encode_mu-self.far_offset_encode_mu)**2 axis=tuple(range(1, len(self.encode_mu.shape))))
         #     self.loss += self.far_offset_loss_mask * far_offset_loss
 
-        self.lr = tf.placeholder(tf.float32)
+        self.lr = tf.compat.v1.placeholder(tf.float32)
         self.opt = tf.train.AdamOptimizer(self.lr)
         # sess.run(tf.variables_initializer(self.opt.variables()))
         train_op = self.opt.minimize(self.loss)

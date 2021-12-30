@@ -121,8 +121,8 @@ def learn(env, policy_func, reward_giver, expert_dataset, rank,
     ac_space = env.action_space
     pi = policy_func("pi", ob_space, ac_space, reuse=(pretrained_weight != None))
     oldpi = policy_func("oldpi", ob_space, ac_space)
-    atarg = tf.placeholder(dtype=tf.float32, shape=[None])  # Target advantage function (if applicable)
-    ret = tf.placeholder(dtype=tf.float32, shape=[None])  # Empirical return
+    atarg = tf.compat.v1.placeholder(dtype=tf.float32, shape=[None])  # Target advantage function (if applicable)
+    ret = tf.compat.v1.placeholder(dtype=tf.float32, shape=[None])  # Empirical return
 
     ob = U.get_placeholder_cached(name="ob")
     ac = pi.pdtype.sample_placeholder([None])
@@ -154,7 +154,7 @@ def learn(env, policy_func, reward_giver, expert_dataset, rank,
     get_flat = U.GetFlat(var_list)
     set_from_flat = U.SetFromFlat(var_list)
     klgrads = tf.gradients(dist, var_list)
-    flat_tangent = tf.placeholder(dtype=tf.float32, shape=[None], name="flat_tan")
+    flat_tangent = tf.compat.v1.placeholder(dtype=tf.float32, shape=[None], name="flat_tan")
     shapes = [var.get_shape().as_list() for var in var_list]
     start = 0
     tangents = []

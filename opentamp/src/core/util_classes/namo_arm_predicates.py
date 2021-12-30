@@ -70,14 +70,14 @@ if USE_TF:
 
     def init_tf_graph():
         linklen = 3.0
-        tf_jnts = tf.placeholder(float, (4,), name="jnts")
+        tf_jnts = tf.compat.v1.placeholder(float, (4,), name="jnts")
         tf_theta1 = tf_jnts[0]
         tf_theta2 = tf_jnts[1]
         tf_theta3 = tf_jnts[2]
         tf_grip = tf_jnts[3]
         tf_cache["grip"] = tf_grip
         tf_cache["jnts"] = tf_jnts
-        tf_dist = tf.placeholder(float, (), name="dist")
+        tf_dist = tf.compat.v1.placeholder(float, (), name="dist")
         tf_cache["dist"] = tf_dist
 
         tf_ee_theta = tf_theta1 + tf_theta2 + tf_theta3
@@ -87,7 +87,7 @@ if USE_TF:
         tf_ee_x = tf_joint2_x - linklen * tf.sin(tf_theta1 + tf_theta2)
         tf_ee_y = tf_joint2_y + linklen * tf.cos(tf_theta1 + tf_theta2)
 
-        tf_xy_pos = tf.placeholder(float, (2,), name="xy_pos")
+        tf_xy_pos = tf.compat.v1.placeholder(float, (2,), name="xy_pos")
         tf_cache["xy_pos"] = tf_xy_pos
         tf_ee_xy = tf.stack([tf_ee_x, tf_ee_y], axis=0)
         tf_cache["ee_xy"] = tf_ee_xy
@@ -95,12 +95,12 @@ if USE_TF:
             [[tf_ee_x, tf_ee_y] - tf_xy_pos, tf_xy_pos - [tf_ee_x, tf_ee_y]], axis=0
         )
         tf_cache["ee_disp"] = tf_ee_disp
-        tf_rot = tf.placeholder(float, (1,), name="rot")
+        tf_rot = tf.compat.v1.placeholder(float, (1,), name="rot")
         tf_cache["rot"] = tf_rot
         tf_rot_disp = tf.concat([tf_rot - tf_ee_theta, tf_ee_theta - tf_rot], axis=0)
         tf_cache["rot_disp"] = tf_rot_disp
 
-        tf_obj_pos = tf.placeholder(float, (2,), name="obj_pos")
+        tf_obj_pos = tf.compat.v1.placeholder(float, (2,), name="obj_pos")
         tf_ee_disp = tf_obj_pos - tf_xy_pos
         tf_cache["obj_pose"] = tf_obj_pos
         tf_ee_grasp = tf.stack(
@@ -117,8 +117,8 @@ if USE_TF:
             tf_cache["ingrasp"], [tf_cache["jnts"], tf_cache["obj_pose"]]
         )
 
-        tf_cache["bump_in"] = tf.placeholder(float, (4, 1), name="bump_in")
-        tf_cache["bump_radius"] = tf.placeholder(float, (), name="bump_radius")
+        tf_cache["bump_in"] = tf.compat.v1.placeholder(float, (4, 1), name="bump_in")
+        tf_cache["bump_radius"] = tf.compat.v1.placeholder(float, (), name="bump_radius")
         pos1 = tf_cache["bump_in"][:2]
         pos2 = tf_cache["bump_in"][2:]
         tf_cache["bump_diff"] = tf.reduce_sum((pos1 - pos2) ** 2)

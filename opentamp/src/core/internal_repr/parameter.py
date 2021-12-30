@@ -214,7 +214,7 @@ class Symbol(Parameter):
         new = Symbol()
         new_free = {}
         for k, v in list(self.__dict__.items()):
-            if v == 'undefined':
+            if type(v) is not np.ndarray and v == 'undefined':
                 attr_type = self.get_attr_type(k)
                 assert issubclass(attr_type, Vector)
                 val = np.empty((attr_type.dim, 1))
@@ -227,6 +227,4 @@ class Symbol(Parameter):
                     new_free[k] = np.zeros_like(v) # self._free_attrs[k].copy()
             else:
                 setattr(new, k, v)
-        # if reset_free:
-        #     new._free_attrs = new_free
         return new

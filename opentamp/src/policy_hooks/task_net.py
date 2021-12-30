@@ -121,11 +121,11 @@ def get_input_layer(dim_input, dim_output, ndims=1):
         action: mu, the ground truth actions we're trying to learn.
         precision: precision matrix used to commpute loss."""
     if type(dim_input) is int:
-        net_input = tf.placeholder("float", [None, dim_input], name='nn_input')
+        net_input = tf.compat.v1.placeholder("float", [None, dim_input], name='nn_input')
     else:
-        net_input = tf.placeholder("float", [None]+dim_input, name='nn_input')
-    task = tf.placeholder('float', [None, dim_output], name='task')
-    precision = tf.placeholder('float', [None, ndims], name='precision')
+        net_input = tf.compat.v1.placeholder("float", [None]+dim_input, name='nn_input')
+    task = tf.compat.v1.placeholder('float', [None, dim_output], name='task')
+    precision = tf.compat.v1.placeholder('float', [None, ndims], name='precision')
     return net_input, task, precision
 
 

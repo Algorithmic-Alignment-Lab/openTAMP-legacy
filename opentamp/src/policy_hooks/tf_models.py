@@ -40,9 +40,9 @@ def get_input_layer(dim_input, dim_output):
         net_input: usually an observation.
         action: mu, the ground truth actions we're trying to learn.
         precision: precision matrix used to commpute loss."""
-    net_input = tf.placeholder("float", [None, dim_input], name='nn_input')
-    action = tf.placeholder('float', [None, dim_output], name='action')
-    precision = tf.placeholder('float', [None, dim_output, dim_output], name='precision')
+    net_input = tf.compat.v1.placeholder("float", [None, dim_input], name='nn_input')
+    action = tf.compat.v1.placeholder('float', [None, dim_output], name='action')
+    precision = tf.compat.v1.placeholder('float', [None, dim_output, dim_output], name='precision')
     return net_input, action, precision
 
 

@@ -10,4 +10,5 @@ from opentamp.envs.hsr_mjc_env import *
 try:
     from opentamp.envs.hsr_ros_env import *
 except Exception as e:
-    traceback.print_exception(*sys.exc_info())
+    pass
+    # traceback.print_exception(*sys.exc_info())
