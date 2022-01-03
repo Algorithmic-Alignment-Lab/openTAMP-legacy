@@ -13,12 +13,14 @@ To install and begin using OpenTAMP on an Ubuntu (>14.04) Linux Machine, follow 
         ```
 1. Make sure you have [tkinter installed](https://tkdocs.com/tutorial/install.html): `sudo apt-get install python3.7-tk`
 1. Install [MuJoCo](https://mujoco.org/)
-    1. Download the correct MuJoCo binary for your OS from [here](https://mujoco.org/download)
+    1. Download the correct MuJoCo binary for your OS from [here](https://mujoco.org/download). Be sure to use version 2.1.0 and not a higher version!
     1. Extract the downloaded `mujoco210` directory into `~/.mujoco/mujoco210`
 1. Clone the OpenTAMP repository from GitHub to a folder of your choice: `https://github.com/Algorithmic-Alignment-Lab/OpenTAMP.git`
 1. `cd` into the newly-installed library and run `poetry shell`, then `poetry install`
-    1. Now, you should have a nice [virtual environment](https://realpython.com/python-virtual-environments-a-primer/) with python configured to run OpenTAMP! Whenever you want to use this, simply `cd` into the OpenTAMP folder and then run `poetry shell`
+    1. Especially on ubuntu 20.04, you might first have to manually specify the path to python 3.7 via `poetry env use /usr/bin/python3.7` 
+1. Now, you should have a nice [virtual environment](https://realpython.com/python-virtual-environments-a-primer/) with python configured to run OpenTAMP! Whenever you want to use this, simply `cd` into the OpenTAMP folder and then run `poetry shell`
 1. (Optional) If you'd like to use [Gurobi](https://www.gurobi.com/) as a backend solver for motion-planning problems, then follow steps [here](https://www.gurobi.com/wp-content/plugins/hd_documentations/content/pdf/quickstart_mac_8.1.pdf) to obtain and activate a license (note: free licenses are available for students and academic users!)
+1. You're all good! Try running `python opentamp/src/test_grip_osqp.py`, and if this script successfully completes and displays a short video at the end, your installation is correct!
 
 **ToDo: Might need to add baselines and h-baselines because they're currently in setup.sh**
 
