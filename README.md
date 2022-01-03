@@ -1,4 +1,4 @@
-# OpenTAMP
+# openTAMP
 OpenTAMP is an open-source library for optimization-based Task and Motion Planning (TAMP), and [Guided Imitation of TAMP](https://openreview.net/forum?id=-JwmfQC6IRt) with Python. OpenTAMP aims to make defining and solving new TAMP problems both easy and straightforward, even for users familiar with only the high-level ideas behind TAMP.
 
 ## Installation and Setup
