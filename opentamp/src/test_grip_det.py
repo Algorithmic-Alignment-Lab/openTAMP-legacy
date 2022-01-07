@@ -36,13 +36,9 @@ p_c = main.parse_file_to_dict(prob_file)
 problem = parse_problem_config.ParseProblemConfig.parse(p_c, domain, None)
 
 possible_can_locs = list(itertools.product(list(range(-70, 70, 4)), list(range(-60, 0, 4))))
-# random.shuffle(possible_can_locs)
 params = problem.init_state.params
-# inds = np.random.choice(range(len(possible_can_locs)), N_OBJS+1, replace=False)
-# import ipdb; ipdb.set_trace()
 inds = [52, 478, 382]
 targ_inds = list(range(8))
-# random.shuffle(targ_inds)
 
 params['obs0'].pose[:,0] = [-3.5, 0.]
 params['pr2'].pose[:,0] = np.array(possible_can_locs[inds[-1]]) / 10.
