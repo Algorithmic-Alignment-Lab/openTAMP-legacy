@@ -7,12 +7,11 @@ from opentamp.envs import MJCEnv
 from core.parsing import parse_domain_config, parse_problem_config
 import main
 import policy_hooks.namo.sorting_prob_11 as prob_gen
-from pma.namo_grip_solver import NAMOSolverOSQP
+from pma.namo_grip_solver import NAMOSolverOSQP, NAMOSolverGurobi
 from pma.hl_solver import *
 from pma.pr_graph import *
-from pma import backtrack_ll_solver_OSQP as bt_ll
-from policy_hooks.utils.load_task_definitions import parse_state
-from core.util_classes.namo_grip_predicates import angle_diff
+from pma import backtrack_ll_solver_OSQP as bt_ll_osqp
+from pma import backtrack_ll_solver_gurobi as bt_ll_gurobi
 from core.util_classes.openrave_body import OpenRAVEBody
 from policy_hooks.utils.policy_solver_utils import *
 import opentamp
@@ -23,8 +22,10 @@ prob_gen.FIX_TARGETS = True
 prob_gen.n_aux = 0
 prob_gen.END_TARGETS = prob_gen.END_TARGETS[:8]
 prob_gen.domain_file = opentamp.__path__._last_parent_path[1] + '/opentamp' + "/domains/namo_domain/namo_current_holgrip.domain"
-bt_ll.DEBUG = True
-bt_ll.COL_COEFF = 0.01
+bt_ll_gurobi.DEBUG = True 
+bt_ll_gurobi.COL_COEFF = 0.01
+bt_ll_osqp.DEBUG = True
+bt_ll_osqp.COL_COEFF = 0.01
 N_OBJS = 2
 visual = len(os.environ.get('DISPLAY', '')) > 0
 d_c = main.parse_file_to_dict(prob_gen.domain_file)
@@ -58,7 +59,10 @@ for pname in params:
     if targ in params:
         params[targ].value[:,0] = params[pname].pose[:,0]
 
+# NOTE: To use Gurrobi instead of OSQP, simply replace the below line with:
+# solver = NAMOSolverGurobi()
 solver = NAMOSolverOSQP()
+
 hls = FFSolver(d_c)
 plan, descr = p_mod_abs(hls, solver, domain, problem, goal=goal, debug=True, n_resamples=5)
 
