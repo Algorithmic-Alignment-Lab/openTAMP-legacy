@@ -59,8 +59,8 @@ for pname in params:
         params[targ].value[:,0] = params[pname].pose[:,0]
 
 # NOTE: To use Gurobi instead of OSQP, simply replace the below line with:
-solver = NAMOSolverGurobi()
-# solver = NAMOSolverOSQP()
+# solver = NAMOSolverGurobi()
+solver = NAMOSolverOSQP()
 
 hls = FFSolver(d_c)
 plan, descr = p_mod_abs(hls, solver, domain, problem, goal=goal, debug=True, n_resamples=5)
