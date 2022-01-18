@@ -3,7 +3,7 @@ warnings.filterwarnings("ignore", message=r"Passing", category=FutureWarning)
 import itertools
 import os
 from opentamp.envs import MJCEnv
-
+import argparse
 from core.parsing import parse_domain_config, parse_problem_config
 import main
 import policy_hooks.namo.sorting_prob_11 as prob_gen
@@ -17,11 +17,15 @@ from policy_hooks.utils.policy_solver_utils import *
 import opentamp
 
 
+parser = argparse.ArgumentParser(description='Process command line args for test_grip.')
+parser.add_argument('-l', '--loc', type=str,
+                    help='path to opentamp folder (e.g. /home/njk/Documents/GitHub/openTAMP)', required=True)
+args = parser.parse_args()
 prob_gen.NUM_OBJS = 2
 prob_gen.FIX_TARGETS = True
 prob_gen.n_aux = 0
 prob_gen.END_TARGETS = prob_gen.END_TARGETS[:8]
-prob_gen.domain_file = opentamp.__path__._last_parent_path[1] + '/opentamp' + "/domains/namo_domain/namo_current_holgrip.domain"
+prob_gen.domain_file = args.loc + '/opentamp' + "/domains/namo_domain/namo_current_holgrip.domain"
 bt_ll_gurobi.DEBUG = True 
 bt_ll_gurobi.COL_COEFF = 0.01
 bt_ll_osqp.DEBUG = True
@@ -30,7 +34,7 @@ N_OBJS = 2
 visual = len(os.environ.get('DISPLAY', '')) > 0
 d_c = main.parse_file_to_dict(prob_gen.domain_file)
 domain = parse_domain_config.ParseDomainConfig.parse(d_c)
-prob_file = opentamp.__path__._last_parent_path[1] + '/opentamp' + "/domains/namo_domain/namo_probs/grip_prob_{}_8end_0aux.prob".format(N_OBJS)
+prob_file = args.loc + '/opentamp' + "/domains/namo_domain/namo_probs/grip_prob_{}_8end_0aux.prob".format(N_OBJS)
 goal = '(and '
 p_c = main.parse_file_to_dict(prob_file)
 problem = parse_problem_config.ParseProblemConfig.parse(p_c, domain, None)
@@ -65,7 +69,7 @@ plan, descr = p_mod_abs(hls, solver, domain, problem, goal=goal, debug=True, n_r
 if plan is None:
     exit()
 
-fpath = opentamp.__path__._last_parent_path[1] + '/opentamp'
+fpath = args.loc + '/opentamp'
 act_jnts = ['robot_x', 'robot_y', 'robot_theta', 'left_finger_joint', 'right_finger_joint']
 items = []
 fname = fpath+'/robot_info/lidar_namo.xml'
