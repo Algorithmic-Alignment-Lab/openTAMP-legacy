@@ -12,7 +12,9 @@ To install and begin using OpenTAMP on an Ubuntu (>14.04) Linux Machine, follow 
         sudo apt-get install python3.7-dev
         ```
 1. Make sure you have [tkinter installed](https://tkdocs.com/tutorial/install.html): `sudo apt-get install python3.7-tk`
+2. Make sure you have libglew installed `sudo apt-get install libglfw3 libglew2.1`
 1. Install [MuJoCo](https://mujoco.org/)
+    1. Make sure you install openmpi for linux (for use with MuJoCo): `sudo apt install libopenmpi-dev`
     1. Download the correct MuJoCo binary for your OS from [here](https://mujoco.org/download). Be sure to use version 2.1.0 and not a higher version!
     1. Extract the downloaded `mujoco210` directory into `~/.mujoco/mujoco210`
 1. Clone the OpenTAMP repository from GitHub to a folder of your choice: `https://github.com/Algorithmic-Alignment-Lab/OpenTAMP.git`
