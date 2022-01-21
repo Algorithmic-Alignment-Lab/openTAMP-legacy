@@ -1,4 +1,5 @@
 import opentamp
+import os
 from opentamp.envs import MJCEnv
 
 import policy_hooks.namo.sort_prob as prob
@@ -25,7 +26,7 @@ import ipdb
 
 ipdb.set_trace()
 
-fpath = opentamp.__path__._last_parent_path[1] + '/opentamp'
+fpath = os.getcwd() + '/opentamp'
 view = False
 act_jnts = [
     "robot_x",

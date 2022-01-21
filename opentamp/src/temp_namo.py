@@ -2,6 +2,7 @@ import opentamp
 from opentamp.envs import MJCEnv
 import itertools
 import policy_hooks.namo.arm_prob as prob
+import os
 
 prob.NUM_OBJS = 2
 prob.FIX_TARGETS = True
@@ -114,7 +115,7 @@ import ipdb
 
 ipdb.set_trace()
 
-fpath = opentamp.__path__._last_parent_path[1] + '/opentamp'
+fpath = os.getcwd() + '/opentamp'
 view = False  # True
 im_dims = (128, 128)
 act_jnts = ["joint1", "joint2", "wrist", "left_finger_joint", "right_finger_joint"]

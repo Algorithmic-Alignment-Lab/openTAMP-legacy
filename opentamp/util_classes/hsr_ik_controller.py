@@ -43,7 +43,7 @@ class HSRIKController(object):
         self.robot_jpos_getter = robot_jpos_getter
         self.use_rot_mat = use_rot_mat
 
-        path = opentamp.__path__._last_parent_path[1] + '/opentamp' + "/robot_info/hsr/simple_hsrb4s.urdf"
+        path = os.getcwd() + '/opentamp' + "/robot_info/hsr/simple_hsrb4s.urdf"
         self.setup_inverse_kinematics(path)
 
         self.commanded_joint_positions = robot_jpos_getter()

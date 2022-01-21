@@ -30,9 +30,9 @@ from opentamp.util_classes.mjc_xml_utils import *
 from opentamp.util_classes import transform_utils as T
 from core.util_classes.robots import *
 
-BASE_VEL_XML = opentamp.__path__._last_parent_path[1] + '/opentamp'+'/robot_info/baxter_model.xml'
-# ENV_XML = opentamp.__path__._last_parent_path[1] + '/opentamp'+'/robot_info/current_baxter_env.xml'
-SPECIFIC_ENV_XML = opentamp.__path__._last_parent_path[1] + '/opentamp'+'/local/current_baxter_{0}.xml'
+BASE_VEL_XML = os.getcwd() + '/opentamp'+'/robot_info/baxter_model.xml'
+# ENV_XML = os.getcwd() + '/opentamp'+'/robot_info/current_baxter_env.xml'
+SPECIFIC_ENV_XML = os.getcwd() + '/opentamp'+'/local/current_baxter_{0}.xml'
 
 MUJOCO_JOINT_ORDER = ['right_s0', 'right_s1', 'right_e0', 'right_e1', 'right_w0', 'right_w1', 'right_w2', 'right_gripper_l_finger_joint', 'right_gripper_r_finger_joint',\
                       'left_s0', 'left_s1', 'left_e0', 'left_e1', 'left_w0', 'left_w1', 'left_w2', 'left_gripper_l_finger_joint', 'left_gripper_r_finger_joint']

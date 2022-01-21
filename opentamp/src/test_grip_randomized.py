@@ -22,7 +22,7 @@ prob_gen.NUM_OBJS = 2
 prob_gen.FIX_TARGETS = True
 prob_gen.n_aux = 0
 prob_gen.END_TARGETS = prob_gen.END_TARGETS[:8]
-prob_gen.domain_file = opentamp.__path__._last_parent_path[1] + '/opentamp' + "/domains/namo_domain/namo_current_holgrip.domain"
+prob_gen.domain_file = os.getcwd() + '/opentamp' + "/domains/namo_domain/namo_current_holgrip.domain"
 bt_ll_gurobi.DEBUG = True 
 bt_ll_gurobi.COL_COEFF = 0.01
 bt_ll_osqp.DEBUG = True
@@ -31,7 +31,7 @@ N_OBJS = 2
 visual = len(os.environ.get('DISPLAY', '')) > 0
 d_c = main.parse_file_to_dict(prob_gen.domain_file)
 domain = parse_domain_config.ParseDomainConfig.parse(d_c)
-prob_file = opentamp.__path__._last_parent_path[1] + '/opentamp' + "/domains/namo_domain/namo_probs/grip_prob_{}_8end_0aux.prob".format(N_OBJS)
+prob_file = os.getcwd() + '/opentamp' + "/domains/namo_domain/namo_probs/grip_prob_{}_8end_0aux.prob".format(N_OBJS)
 goal = '(and '
 p_c = main.parse_file_to_dict(prob_file)
 problem = parse_problem_config.ParseProblemConfig.parse(p_c, domain, None)
@@ -68,7 +68,7 @@ plan, descr = p_mod_abs(hls, solver, domain, problem, goal=goal, debug=True, n_r
 if plan is None:
     exit()
 
-fpath = opentamp.__path__._last_parent_path[1] + '/opentamp'
+fpath = os.getcwd() + '/opentamp'
 act_jnts = ['robot_x', 'robot_y', 'robot_theta', 'left_finger_joint', 'right_finger_joint']
 items = []
 fname = fpath+'/robot_info/lidar_namo.xml'

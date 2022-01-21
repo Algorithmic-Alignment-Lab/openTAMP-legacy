@@ -82,7 +82,7 @@ class HLState(object):
         return s
 
 class FFSolver(HLSolver):
-    FF_EXEC = opentamp.__path__._last_parent_path[1] + '/opentamp'+"/task_planners/FF-v2.3/ff"
+    FF_EXEC = os.getcwd() + '/opentamp'+"/task_planners/FF-v2.3/ff"
     FILE_PREFIX = "temp_"
 
     def _parse_precondition_ts(self, pre, ts):

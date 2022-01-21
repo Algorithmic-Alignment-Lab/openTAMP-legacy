@@ -1,6 +1,6 @@
 import opentamp
 from opentamp.envs import MJCEnv
-import itertools
+import os
 import policy_hooks.namo.door_prob as prob
 
 prob.NUM_OBJS = 2
@@ -20,7 +20,7 @@ from core.util_classes.namo_grip_predicates import angle_diff
 import pybullet as P
 from core.util_classes.openrave_body import *
 
-NAMO_XML = opentamp.__path__._last_parent_path[1] + '/opentamp' + "/robot_info/lidar_namo.xml"
+NAMO_XML = os.getcwd() + '/opentamp' + "/robot_info/lidar_namo.xml"
 
 plans = prob.get_plans(use_tf=True)
 plan = list(plans[0].values())[0]
@@ -98,7 +98,7 @@ import ipdb
 ipdb.set_trace()
 
 view = True
-fpath = opentamp.__path__._last_parent_path[1] + '/opentamp'
+fpath = os.getcwd() + '/opentamp'
 im_dims = (256, 256)
 wall_dims = OpenRAVEBody.get_wall_dims("closet")
 config = {

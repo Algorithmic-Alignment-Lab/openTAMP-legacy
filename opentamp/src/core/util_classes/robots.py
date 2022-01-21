@@ -1,5 +1,6 @@
 from collections import OrderedDict
 import core.util_classes.common_constants as const
+import os
 
 import pybullet as p
 from opentamp.util_classes.ik_controller import *
@@ -259,7 +260,7 @@ class NAMO(Robot):
         self._base_type = "robot"
         self.file_type = 'mjcf'
         self.radius = 0.3
-        self.shape = opentamp.__path__._last_parent_path[1] + '/opentamp'+'/robot_info/lidar_namo.xml'
+        self.shape = os.getcwd() + '/opentamp'+'/robot_info/lidar_namo.xml'
         self.dof_map = {'xpos': 0, 'ypos': 1, 'robot_theta': 2, 'left_grip': 6, 'right_grip': 4}
         self._init_pybullet()
         self.initialized = True
@@ -270,7 +271,7 @@ class TwoLinkArm(Robot):
         self._type = "robot"
         self.file_type = 'mjcf'
         self.radius = 0.3
-        self.shape = opentamp.__path__._last_parent_path[1] + '/opentamp'+'/robot_info/lidar_arm.xml'
+        self.shape = os.getcwd() + '/opentamp'+'/robot_info/lidar_arm.xml'
         self.dof_map = {'joint1': 0, 'joint2': 2, 'wrist': 4, 'left_grip': 11, 'right_grip': 8}
         self.link_to_ind = {'link1': 1, 'link2': 3, 'wrist': 5, 'ee': 6, 'ee_far': 7, 'right_finger': 8, 'right_finger_tip': 9, 'left_finger': 11, 'left_finger_tip': 12}
         self.ind_to_link = {v:k for k, v in self.link_to_ind.items()}
@@ -319,7 +320,7 @@ class Baxter(Robot):
     """
     def __init__(self):
         self._type = "baxter"
-        baxter_shape = opentamp.__path__._last_parent_path[1] + '/opentamp' + "/robot_info/baxter_model.xml"
+        baxter_shape = os.getcwd() + '/opentamp' + "/robot_info/baxter_model.xml"
         super(Baxter, self).__init__(baxter_shape)
 
         self.jnt_names = {'left':  ['left_s0', 'left_s1', 'left_e0', 'left_e1', 'left_w0', 'left_w1', 'left_w2'],
@@ -372,7 +373,7 @@ class Sawyer(Robot):
     """
     def __init__(self):
         self._type = "sawyer"
-        sawyer_shape = opentamp.__path__._last_parent_path[1] + '/opentamp' + "/robot_info/sawyer/robot.xml"
+        sawyer_shape = os.getcwd() + '/opentamp' + "/robot_info/sawyer/robot.xml"
         super(Sawyer, self).__init__(sawyer_shape)
 
         self.jnt_names = {'right':  ['right_j0','right_j1','right_j2','right_j3','right_j4','right_j5','right_j6'],
@@ -393,7 +394,7 @@ class Panda(Robot):
     """
     def __init__(self):
         self._type = "panda"
-        panda_shape = opentamp.__path__._last_parent_path[1] + '/opentamp' + "/robot_info/robodesk/panda.xml"
+        panda_shape = os.getcwd() + '/opentamp' + "/robot_info/robodesk/panda.xml"
         super(Panda, self).__init__(panda_shape)
 
         self.jnt_names = {'right': ['panda0_joint1', 'panda0_joint2', 'panda0_joint3', 

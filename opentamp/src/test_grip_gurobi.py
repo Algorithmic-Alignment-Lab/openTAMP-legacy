@@ -62,7 +62,7 @@ plan, descr = p_mod_abs(hls, solver, domain, problem, goal=goal, debug=True, n_r
 if plan is None:
     exit()
 
-fpath = opentamp.__path__._last_parent_path[1] + '/opentamp'
+fpath = os.getcwd() + '/opentamp'
 act_jnts = ['robot_x', 'robot_y', 'robot_theta', 'left_finger_joint', 'right_finger_joint']
 items = []
 fname = fpath+'/robot_info/lidar_namo.xml'

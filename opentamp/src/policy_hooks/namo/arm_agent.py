@@ -2,6 +2,7 @@ import copy
 import sys
 import time
 import traceback
+import os
 
 import pickle as pickle
 
@@ -49,7 +50,7 @@ LIDAR_DIST = 2.
 DSAFE = 5e-1
 MAX_STEP = max(1.5*dmove, 1)
 LOCAL_FRAME = True
-NAMO_XML = opentamp.__path__._last_parent_path[1] + '/opentamp' + '/robot_info/lidar_arm.xml'
+NAMO_XML = os.getcwd() + '/opentamp' + '/robot_info/lidar_arm.xml'
 
 
 class optimal_pol:

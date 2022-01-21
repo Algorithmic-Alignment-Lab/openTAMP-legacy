@@ -1,4 +1,5 @@
 import xml.etree.ElementTree as xml
+import os
 
 
 MUJOCO_MODEL_Z_OFFSET = -0.665 # -0.706
@@ -279,7 +280,7 @@ def generate_xml(base_file, target_file, items=[], include_files=[], include_ite
     sensors = root.find('sensor')
 
     if root.find('compiler') is None:
-        compiler_str = '<compiler coordinate="local" angle="radian" meshdir="{0}" texturedir="textures/" strippath="false" />'.format(opentamp.__path__._last_parent_path[1] + '/opentamp'+'/')
+        compiler_str = '<compiler coordinate="local" angle="radian" meshdir="{0}" texturedir="textures/" strippath="false" />'.format(os.getcwd() + '/opentamp'+'/')
         compiler_xml = xml.fromstring(compiler_str)
         root.append(compiler_xml)
 

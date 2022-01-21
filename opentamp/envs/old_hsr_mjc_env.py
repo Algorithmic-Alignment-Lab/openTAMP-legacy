@@ -32,8 +32,8 @@ from opentamp.util_classes.mjc_xml_utils import *
 from opentamp.util_classes import transform_utils as T
 
 
-BASE_VEL_XML = opentamp.__path__._last_parent_path[1] + '/opentamp'+'/robot_info/hsr_model.xml'
-ENV_XML = opentamp.__path__._last_parent_path[1] + '/opentamp'+'/robot_info/current_hsr_env.xml'
+BASE_VEL_XML = os.getcwd() + '/opentamp'+'/robot_info/hsr_model.xml'
+ENV_XML = os.getcwd() + '/opentamp'+'/robot_info/current_hsr_env.xml'
 
 
 MUJOCO_JOINT_ORDER = ["slide_x", "slide_y", "arm_lift_joint", "arm_flex_joint", "arm_roll_joint", "wrist_flex_joint", "wrist_roll_joint", "hand_l_proximal_joint", "hand_r_proximal_joint"]
