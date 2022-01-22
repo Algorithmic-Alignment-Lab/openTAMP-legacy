@@ -4,7 +4,7 @@ from gym.spaces import *
 
 from opentamp.envs import BaxterLeftBlockStackEnv
 
-from policy_hooks.vae.vae_env import VAEEnvWrapper
+from opentamp.src.policy_hooks.vae.vae_env import VAEEnvWrapper
 
 
 class BlockSortEnv(VAEEnvWrapper):

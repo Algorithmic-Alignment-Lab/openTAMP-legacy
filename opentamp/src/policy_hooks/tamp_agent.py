@@ -21,14 +21,14 @@ from pma.pr_graph import *
 import pybullet as p
 
 from core.util_classes.namo_predicates import dsafe
-from policy_hooks.agent import Agent
-from policy_hooks.sample import Sample
-from policy_hooks.sample_list import SampleList
-from policy_hooks.save_video import save_video
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.agent import Agent
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.sample_list import SampleList
+from opentamp.src.policy_hooks.save_video import save_video
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.utils.tamp_eval_funcs import *
-from policy_hooks.utils.load_task_definitions import *
+from opentamp.src.policy_hooks.utils.tamp_eval_funcs import *
+from opentamp.src.policy_hooks.utils.load_task_definitions import *
 
 MAX_SAMPLELISTS = 1000
 MAX_TASK_PATHS = 1000

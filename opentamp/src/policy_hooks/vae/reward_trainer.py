@@ -10,7 +10,7 @@ import h5py
 import numpy as np
 import tensorflow as tf
 
-from policy_hooks.vae.vae import VAE
+from opentamp.src.policy_hooks.vae.vae import VAE
 
 
 ENCODER_CONFIG = {

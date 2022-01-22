@@ -4,7 +4,7 @@ import os
 import queue
 import time
 
-from policy_hooks.data_buffer import DataBuffer
+from opentamp.src.policy_hooks.data_buffer import DataBuffer
 
 
 class DataLoader(object):

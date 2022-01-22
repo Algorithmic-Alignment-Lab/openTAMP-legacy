@@ -5,9 +5,9 @@ import pickle
 from select import select
 import time
 
-from policy_hooks.search_node import HLSearchNode
-from policy_hooks.server import Server
-from policy_hooks.human_labels.video_renderer import VideoRenderer
+from opentamp.src.policy_hooks.search_node import HLSearchNode
+from opentamp.src.policy_hooks.server import Server
+from opentamp.src.policy_hooks.human_labels.video_renderer import VideoRenderer
 
 
 DIR_KEY = 'experiment_logs/'

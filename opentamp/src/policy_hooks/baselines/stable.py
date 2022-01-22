@@ -11,8 +11,8 @@ from stable_baselines.common.evaluation import evaluate_policy
 from stable_baselines.common.noise import NormalActionNoise, OrnsteinUhlenbeckActionNoise, AdaptiveParamNoiseSpec
 from stable_baselines.common.vec_env import DummyVecEnv, SubprocVecEnv, VecEnv, sync_envs_normalization
 
-from policy_hooks.agent_env_wrapper import AgentEnvWrapper, gen_agent_env, register_env
-from policy_hooks.multiprocess_main import load_config, setup_dirs, DIR_KEY
+from opentamp.src.policy_hooks.agent_env_wrapper import AgentEnvWrapper, gen_agent_env, register_env
+from opentamp.src.policy_hooks.multiprocess_main import load_config, setup_dirs, DIR_KEY
 
 
 def run(config):

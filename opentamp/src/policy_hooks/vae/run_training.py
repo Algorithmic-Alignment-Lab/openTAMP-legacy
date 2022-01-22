@@ -3,7 +3,7 @@ import imp
 import importlib
 import random
 
-from policy_hooks.vae.vae_main import MultiProcessMain
+from opentamp.src.policy_hooks.vae.vae_main import MultiProcessMain
 
 
 def load_config(args, reload_module=None):

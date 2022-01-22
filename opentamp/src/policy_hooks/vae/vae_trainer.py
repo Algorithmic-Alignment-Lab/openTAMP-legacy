@@ -13,9 +13,9 @@ from std_msgs.msg import Float32MultiArray, String
 from tamp_ros.msg import *
 from tamp_ros.srv import *
 
-from policy_hooks.agent_env_wrapper import AgentEnvWrapper
-from policy_hooks.utils.policy_solver_utils import *
-from policy_hooks.vae.vae import VAE
+from opentamp.src.policy_hooks.agent_env_wrapper import AgentEnvWrapper
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.vae.vae import VAE
 
 
 class VAETrainer(object):

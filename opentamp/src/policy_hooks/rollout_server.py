@@ -13,13 +13,13 @@ from PIL import Image
 
 from sco_py.expr import *
 from core.internal_repr.plan import Plan
-from policy_hooks.sample import Sample
-from policy_hooks.sample_list import SampleList
-from policy_hooks.utils.policy_solver_utils import *
-from policy_hooks.msg_classes import *
-from policy_hooks.rollout_supervisor import *
-from policy_hooks.server import *
-from policy_hooks.search_node import *
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.sample_list import SampleList
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.msg_classes import *
+from opentamp.src.policy_hooks.rollout_supervisor import *
+from opentamp.src.policy_hooks.server import *
+from opentamp.src.policy_hooks.search_node import *
 
 
 ROLL_PRIORITY = 5

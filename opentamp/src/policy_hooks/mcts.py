@@ -7,8 +7,8 @@ import random
 import time
 
 from pma.pr_graph import *
-from policy_hooks.sample import Sample
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 
 
 MAX_OPT_DEPTH = 30 # TODO: Make this more versatile

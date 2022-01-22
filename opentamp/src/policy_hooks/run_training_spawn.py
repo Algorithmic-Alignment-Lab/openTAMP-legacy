@@ -1,4 +1,4 @@
-from policy_hooks.run_training import *
+from opentamp.src.policy_hooks.run_training import *
 
 
 if __name__ == '__main__':

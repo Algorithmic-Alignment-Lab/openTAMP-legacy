@@ -2,10 +2,10 @@ import numpy as np
 
 from sco_py.expr import EqExpr
 
-from policy_hooks.sample import Sample
-from policy_hooks.save_video import save_video
-from policy_hooks.search_node import *
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.save_video import save_video
+from opentamp.src.policy_hooks.search_node import *
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 
 
 ROLL_PRIORITY = 5

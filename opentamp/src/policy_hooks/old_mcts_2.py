@@ -2,8 +2,8 @@ from copy import copy, deepcopy
 from datetime import datetime
 import numpy as np
 
-from policy_hooks.sample import Sample
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 
 
 class MixedPolicy:

@@ -21,7 +21,7 @@ import core.util_classes.common_constants as const
 import pybullet as P
 
 
-from policy_hooks.sample_list import SampleList
+from opentamp.src.policy_hooks.sample_list import SampleList
 
 import core.util_classes.items as items
 from core.util_classes.namo_predicates import dsafe, NEAR_TOL, dmove, HLGraspFailed, HLTransferFailed
@@ -32,13 +32,13 @@ import core.util_classes.transform_utils as T
 import pma.backtrack_ll_solver as bt_ll
 from pma.robosuite_solver import REF_JNTS
 
-from policy_hooks.agent import Agent
-from policy_hooks.sample import Sample
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.agent import Agent
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.utils.tamp_eval_funcs import *
-# from policy_hooks.namo.sorting_prob_4 import *
-from policy_hooks.tamp_agent import TAMPAgent
+from opentamp.src.policy_hooks.utils.tamp_eval_funcs import *
+# from opentamp.src.policy_hooks.namo.sorting_prob_4 import *
+from opentamp.src.policy_hooks.tamp_agent import TAMPAgent
 
 from mujoco_py.generated import const as mj_const
 import robosuite

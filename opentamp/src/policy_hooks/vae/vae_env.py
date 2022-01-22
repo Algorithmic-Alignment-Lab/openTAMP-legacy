@@ -2,8 +2,8 @@ import numpy as np
 
 from gym import spaces
 
-from policy_hooks.agent_env_wrapper import AgentEnvWrapper
-from policy_hooks.vae.vae import VAE
+from opentamp.src.policy_hooks.agent_env_wrapper import AgentEnvWrapper
+from opentamp.src.policy_hooks.vae.vae import VAE
 
 
 class VAEEnvWrapper(AgentEnvWrapper):

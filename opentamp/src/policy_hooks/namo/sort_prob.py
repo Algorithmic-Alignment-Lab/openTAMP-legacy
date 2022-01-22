@@ -12,8 +12,8 @@ from core.internal_repr.plan import Plan
 from core.util_classes.namo_predicates import dsafe, GRIP_VAL
 from core.util_classes.openrave_body import *
 from pma.hl_solver import FFSolver
-from policy_hooks.utils.load_task_definitions import get_tasks, plan_from_str
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.utils.load_task_definitions import get_tasks, plan_from_str
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 import policy_hooks.utils.policy_solver_utils as utils
 
 NO_COL = True

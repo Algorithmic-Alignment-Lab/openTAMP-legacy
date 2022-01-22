@@ -13,7 +13,7 @@ from pma.pr_graph import *
 from pma import backtrack_ll_solver_OSQP as bt_ll_osqp
 from pma import backtrack_ll_solver_gurobi as bt_ll_gurobi
 from core.util_classes.openrave_body import OpenRAVEBody
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 import os
 
 

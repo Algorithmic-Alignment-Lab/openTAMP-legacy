@@ -1,7 +1,7 @@
 """ This file defines the sample class. """
 import numpy as np
 
-from policy_hooks.utils.policy_solver_utils import ACTION_ENUM
+from opentamp.src.policy_hooks.utils.policy_solver_utils import ACTION_ENUM
 
 
 class Sample(object):

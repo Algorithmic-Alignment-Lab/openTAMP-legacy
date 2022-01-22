@@ -27,26 +27,26 @@ import random
 
 import numpy as np
 
-import software_constants
-from gps.algorithm.cost.cost_utils import *
+import opentamp.src.software_constants as software_constants
+# from gps.algorithm.cost.cost_utils import *
 
-from policy_hooks.control_attention_policy_opt import ControlAttentionPolicyOpt
-from policy_hooks.mcts import MCTS
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.control_attention_policy_opt import ControlAttentionPolicyOpt
+from opentamp.src.policy_hooks.mcts import MCTS
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.task_net import * 
-from policy_hooks.mcts import MCTS
-from policy_hooks.state_traj_cost import StateTrajCost
-from policy_hooks.action_traj_cost import ActionTrajCost
-from policy_hooks.utils.load_task_definitions import *
-from policy_hooks.policy_server import PolicyServer
-from policy_hooks.rollout_server import RolloutServer
-from policy_hooks.motion_server import MotionServer
-from policy_hooks.task_server import TaskServer
-from policy_hooks.human_labels.label_server import LabelServer
-from policy_hooks.tf_models import tf_network, multi_modal_network_fp, fp_cont_network
+from opentamp.src.policy_hooks.task_net import * 
+from opentamp.src.policy_hooks.mcts import MCTS
+from opentamp.src.policy_hooks.state_traj_cost import StateTrajCost
+from opentamp.src.policy_hooks.action_traj_cost import ActionTrajCost
+from opentamp.src.policy_hooks.utils.load_task_definitions import *
+from opentamp.src.policy_hooks.policy_server import PolicyServer
+from opentamp.src.policy_hooks.rollout_server import RolloutServer
+from opentamp.src.policy_hooks.motion_server import MotionServer
+from opentamp.src.policy_hooks.task_server import TaskServer
+from opentamp.src.policy_hooks.human_labels.label_server import LabelServer
+from opentamp.src.policy_hooks.tf_models import tf_network, multi_modal_network_fp, fp_cont_network
 import policy_hooks.hl_retrain as hl_retrain
-from policy_hooks.utils.load_agent import *
+from opentamp.src.policy_hooks.utils.load_agent import *
 
 
 DIR_KEY = 'experiment_logs/'

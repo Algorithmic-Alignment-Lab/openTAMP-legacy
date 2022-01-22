@@ -8,7 +8,7 @@ from mujoco_py.mjlib import mjlib
 from core.parsing import parse_domain_config, parse_problem_config
 from core.util_classes.plan_hdf5_serialization import PlanDeserializer
 from pma import hl_solver
-from policy_hooks import baxter_controller, policy_solver_utils, tamp_agent
+from opentamp.src.policy_hooks import baxter_controller, policy_solver_utils, tamp_agent
 
 
 def load_environment(domain_file, problem_file):

@@ -1,5 +1,5 @@
 import tensorflow as tf
-from policy_hooks.utils.tf_utils import TfMap
+from opentamp.src.policy_hooks.utils.tf_utils import TfMap
 import numpy as np
 from copy import copy
 

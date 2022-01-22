@@ -9,9 +9,9 @@ import random
 from core.internal_repr.plan import Plan
 from core.util_classes.namo_predicates import dsafe
 from pma.hl_solver import FFSolver
-from policy_hooks.baxter.cloth_locs import cloth_locs as possible_cloth_locs
-from policy_hooks.utils.load_task_definitions import get_tasks, plan_from_str
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.baxter.cloth_locs import cloth_locs as possible_cloth_locs
+from opentamp.src.policy_hooks.utils.load_task_definitions import get_tasks, plan_from_str
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 
 TABLE_TOP = 0.655
 

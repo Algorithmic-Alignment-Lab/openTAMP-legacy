@@ -9,9 +9,9 @@ from hbaselines.utils.env_util import ENV_ATTRIBUTES
 from stable_baselines.common.env_checker import check_env
 from stable_baselines.common.vec_env import DummyVecEnv, SubprocVecEnv, VecEnv, sync_envs_normalization
 
-from policy_hooks.agent_env_wrapper import AgentEnvWrapper, gen_agent_env, register_env
-from policy_hooks.multiprocess_main import load_config, setup_dirs, DIR_KEY
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.agent_env_wrapper import AgentEnvWrapper, gen_agent_env, register_env
+from opentamp.src.policy_hooks.multiprocess_main import load_config, setup_dirs, DIR_KEY
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 
 def run(config):
     args = config['args']

@@ -9,8 +9,8 @@ import random
 from core.internal_repr.plan import Plan
 from core.util_classes.namo_predicates import dsafe
 from pma.hl_solver import FFSolver
-from policy_hooks.utils.load_task_definitions import get_tasks, plan_from_str
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.utils.load_task_definitions import get_tasks, plan_from_str
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 
 possible_can_locs = [(0, 60), (0, 50), (0, 45), (0, 40), (0, 35)]
 possible_can_locs.extend(list(itertools.product(list(range(-25, 25)), list(range(-10, 25)))))

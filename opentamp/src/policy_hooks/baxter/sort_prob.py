@@ -11,9 +11,9 @@ import time
 from core.internal_repr.plan import Plan
 from core.util_classes.namo_predicates import dsafe
 from pma.hl_solver import FFSolver
-from policy_hooks.utils.load_task_definitions import get_tasks, plan_from_str
+from opentamp.src.policy_hooks.utils.load_task_definitions import get_tasks, plan_from_str
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 
 
 NUM_CLOTHS = 5

@@ -17,7 +17,7 @@ from pma.hl_solver import *
 from pma.pr_graph import *
 from pma import backtrack_ll_solver_gurobi as bt_ll
 from core.util_classes.openrave_body import OpenRAVEBody
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 
 bt_ll.DEBUG = True
 bt_ll.COL_COEFF = 0.01

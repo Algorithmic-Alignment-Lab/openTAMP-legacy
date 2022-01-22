@@ -9,11 +9,11 @@ import shutil
 import sys
 import time
 
-from policy_hooks.multiprocess_main import MultiProcessMain
+from opentamp.src.policy_hooks.multiprocess_main import MultiProcessMain
 
 USE_BASELINES = True 
 if USE_BASELINES:
-    from policy_hooks.baselines.argparse import argsparser as baseline_argsparser
+    from opentamp.src.policy_hooks.baselines.argparse import argsparser as baseline_argsparser
 
 
 DIR_KEY = 'experiment_logs/'
@@ -125,15 +125,15 @@ def run_baseline(args):
     current_id = 0 # setup_dirs(c, args)
 
     if baseline.lower() == 'stable':
-        from policy_hooks.baselines.stable import run
+        from opentamp.src.policy_hooks.baselines.stable import run
         run(config=config)
 
     elif baseline.lower() == 'hbaselines':
-        from policy_hooks.baselines.hbaselines import run
+        from opentamp.src.policy_hooks.baselines.hbaselines import run
         run(config=config)
 
     elif baseline.lower() == 'gail':
-        from policy_hooks.baselines.gail import run, eval_ckpts
+        from opentamp.src.policy_hooks.baselines.gail import run, eval_ckpts
         config['id'] = 0
         if config['task'] == 'evaluate':
             args = config['args']
@@ -143,12 +143,12 @@ def run_baseline(args):
             print('Finished GAIL train')
 
     elif baseline.lower() == 'hiro':
-        from policy_hooks.baselines.hbaselines import run
+        from opentamp.src.policy_hooks.baselines.hbaselines import run
         config['id'] = 0
         run(config=config)
 
     elif baseline.lower() == 'example':
-        from policy_hooks.baselines.example import run
+        from opentamp.src.policy_hooks.baselines.example import run
         config['id'] = 0
         run(config=config)
     else:

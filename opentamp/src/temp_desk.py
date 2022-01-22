@@ -15,9 +15,9 @@ from pma import backtrack_ll_solver as bt_ll
 from pma.robot_solver import RobotSolver
 import core.util_classes.transform_utils as T
 
-from policy_hooks.multiprocess_main import load_config, setup_dirs, DIR_KEY
-from policy_hooks.run_training import argsparser
-from policy_hooks.utils.load_agent import *
+from opentamp.src.policy_hooks.multiprocess_main import load_config, setup_dirs, DIR_KEY
+from opentamp.src.policy_hooks.run_training import argsparser
+from opentamp.src.policy_hooks.utils.load_agent import *
 import policy_hooks.robodesk.hyp as hyp
 import policy_hooks.robodesk.desk_prob as prob
 

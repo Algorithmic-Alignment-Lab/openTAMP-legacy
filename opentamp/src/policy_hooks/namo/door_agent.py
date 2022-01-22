@@ -21,7 +21,7 @@ else:
     import pybullet as P
 
 
-from policy_hooks.sample_list import SampleList
+from opentamp.src.policy_hooks.sample_list import SampleList
 
 import opentamp
 from opentamp.envs import MJCEnv
@@ -31,14 +31,14 @@ from core.util_classes.namo_grip_predicates import dsafe, NEAR_TOL, dmove, HLGra
 from core.util_classes.openrave_body import OpenRAVEBody
 from core.util_classes.viewer import OpenRAVEViewer
 
-from policy_hooks.agent import Agent
-from policy_hooks.sample import Sample
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.agent import Agent
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.utils.tamp_eval_funcs import *
-# from policy_hooks.namo.sorting_prob_4 import *
-from policy_hooks.namo.namo_agent import NAMOSortingAgent
-from policy_hooks.namo.grip_agent import NAMOGripAgent
+from opentamp.src.policy_hooks.utils.tamp_eval_funcs import *
+# from opentamp.src.policy_hooks.namo.sorting_prob_4 import *
+from opentamp.src.policy_hooks.namo.namo_agent import NAMOSortingAgent
+from opentamp.src.policy_hooks.namo.grip_agent import NAMOGripAgent
 
 LOCAL_NEAR_TOL = 0.5
 MAX_SAMPLELISTS = 1000

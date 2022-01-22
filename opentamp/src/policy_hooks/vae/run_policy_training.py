@@ -6,8 +6,8 @@ from stable_baselines.common.vec_env import DummyVecEnv
 from stable_baselines.results_plotter import load_results, ts2xy
 from stable_baselines import A2C
 
-from policy_hooks.vae.vae import VAE
-from policy_hooks.vae.vae_env import VAEEnvWrapper
+from opentamp.src.policy_hooks.vae.vae import VAE
+from opentamp.src.policy_hooks.vae.vae_env import VAEEnvWrapper
 
 
 class PolicyTrainer(object):

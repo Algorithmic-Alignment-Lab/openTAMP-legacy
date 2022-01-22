@@ -20,8 +20,8 @@ from dm_control.viewer import views
 
 from core.util_classes.openrave_body import OpenRAVEBody
 from core.util_classes.robots import Baxter
-from policy_hooks.baxter.baxter_ik_controller import BaxterIKController
-from policy_hooks.utils.mjc_xml_utils import *
+from opentamp.src.policy_hooks.baxter.baxter_ik_controller import BaxterIKController
+from opentamp.src.policy_hooks.utils.mjc_xml_utils import *
 import policy_hooks.utils.transform_utils as T
 
 

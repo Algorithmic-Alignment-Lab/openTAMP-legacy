@@ -28,22 +28,22 @@ import rosgraph
 import rospy
 
 from core.util_classes.openrave_body import OpenRAVEBody
-from policy_hooks.mcts_explore import MCTSExplore
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.mcts_explore import MCTSExplore
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.mcts import MCTS
-from policy_hooks.utils.load_task_definitions import *
+from opentamp.src.policy_hooks.mcts import MCTS
+from opentamp.src.policy_hooks.utils.load_task_definitions import *
 
-from policy_hooks.vae.reward_trainer import RewardTrainer
-from policy_hooks.vae.vae_server import VAEServer
-from policy_hooks.vae.vae_trainer import VAETrainer
-from policy_hooks.vae.vae_rollout_server import VAERolloutServer
-from policy_hooks.vae.vae_tamp_rollout_server import VAETampRolloutServer
+from opentamp.src.policy_hooks.vae.reward_trainer import RewardTrainer
+from opentamp.src.policy_hooks.vae.vae_server import VAEServer
+from opentamp.src.policy_hooks.vae.vae_trainer import VAETrainer
+from opentamp.src.policy_hooks.vae.vae_rollout_server import VAERolloutServer
+from opentamp.src.policy_hooks.vae.vae_tamp_rollout_server import VAETampRolloutServer
 
-from policy_hooks.namo.namo_hyperparams import config as namo_config
+from opentamp.src.policy_hooks.namo.namo_hyperparams import config as namo_config
 
 from opentamp.envs import MJCEnv
-from policy_hooks.vae.vae_env import VAEEnvWrapper
+from opentamp.src.policy_hooks.vae.vae_env import VAEEnvWrapper
 
 class NAMOSortenv(VAEEnvWrapper):
     action_space = spaces.MultiDiscrete([1, 4, 7])

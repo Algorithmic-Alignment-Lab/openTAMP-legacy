@@ -27,32 +27,32 @@ import rospy
 
 from gps.algorithm.cost.cost_utils import *
 
-# from policy_hooks.control_attention_policy_opt import ControlAttentionPolicyOpt
-from policy_hooks.mcts_explore import MCTSExplore
-from policy_hooks.sample import Sample
-from policy_hooks.utils.policy_solver_utils import *
-# from policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
+# from opentamp.src.policy_hooks.control_attention_policy_opt import ControlAttentionPolicyOpt
+from opentamp.src.policy_hooks.mcts_explore import MCTSExplore
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
+# from opentamp.src.policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
 import policy_hooks.utils.policy_solver_utils as utils
-# from policy_hooks.task_net import tf_binary_network, tf_classification_network
-from policy_hooks.mcts import MCTS
-from policy_hooks.state_traj_cost import StateTrajCost
-from policy_hooks.action_traj_cost import ActionTrajCost
-from policy_hooks.traj_constr_cost import TrajConstrCost
-from policy_hooks.cost_product import CostProduct
-from policy_hooks.sample import Sample
-from policy_hooks.policy_solver import get_base_solver
-from policy_hooks.utils.load_task_definitions import *
-# from policy_hooks.value_server import ValueServer
-# from policy_hooks.primitive_server import PrimitiveServer
-# from policy_hooks.policy_server import PolicyServer
-# from policy_hooks.rollout_server import RolloutServer
-# from policy_hooks.tf_models import tf_network, multi_modal_network_fp
-# from policy_hooks.view_server import ViewServer
-from policy_hooks.vae.reward_trainer import RewardTrainer
-from policy_hooks.vae.vae_server import VAEServer
-from policy_hooks.vae.vae_trainer import VAETrainer
-from policy_hooks.vae.vae_rollout_server import VAERolloutServer
-from policy_hooks.vae.vae_tamp_rollout_server import VAETampRolloutServer
+# from opentamp.src.policy_hooks.task_net import tf_binary_network, tf_classification_network
+from opentamp.src.policy_hooks.mcts import MCTS
+from opentamp.src.policy_hooks.state_traj_cost import StateTrajCost
+from opentamp.src.policy_hooks.action_traj_cost import ActionTrajCost
+from opentamp.src.policy_hooks.traj_constr_cost import TrajConstrCost
+from opentamp.src.policy_hooks.cost_product import CostProduct
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.policy_solver import get_base_solver
+from opentamp.src.policy_hooks.utils.load_task_definitions import *
+# from opentamp.src.policy_hooks.value_server import ValueServer
+# from opentamp.src.policy_hooks.primitive_server import PrimitiveServer
+# from opentamp.src.policy_hooks.policy_server import PolicyServer
+# from opentamp.src.policy_hooks.rollout_server import RolloutServer
+# from opentamp.src.policy_hooks.tf_models import tf_network, multi_modal_network_fp
+# from opentamp.src.policy_hooks.view_server import ViewServer
+from opentamp.src.policy_hooks.vae.reward_trainer import RewardTrainer
+from opentamp.src.policy_hooks.vae.vae_server import VAEServer
+from opentamp.src.policy_hooks.vae.vae_trainer import VAETrainer
+from opentamp.src.policy_hooks.vae.vae_rollout_server import VAERolloutServer
+from opentamp.src.policy_hooks.vae.vae_tamp_rollout_server import VAETampRolloutServer
 
 
 def spawn_server(cls, hyperparams):

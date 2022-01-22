@@ -4,7 +4,7 @@ import numpy as np
 
 from core.parsing import parse_domain_config, parse_problem_config
 from pma import hl_solver, robot_ll_solver
-from policy_hooks import policy_solver, tamp_agent, policy_hyperparams, policy_solver_utils
+from opentamp.src.policy_hooks import policy_solver, tamp_agent, policy_hyperparams, policy_solver_utils
 
 def load_environment(domain_file, problem_file):
     domain_fname = domain_file

@@ -5,9 +5,9 @@ from gym import Env
 from gym import spaces
 from gym.envs.registration import register
 
-from policy_hooks.sample import Sample
-from policy_hooks.utils.policy_solver_utils import *
-from policy_hooks.utils.load_agent import *
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.utils.load_agent import *
 
 
 DIR_KEY = 'experiment_logs/'

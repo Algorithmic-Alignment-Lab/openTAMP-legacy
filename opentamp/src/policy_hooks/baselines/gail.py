@@ -20,8 +20,8 @@ from baselines import bench
 from baselines import logger
 from baselines.gail.adversary import TransitionClassifier
 
-from policy_hooks.baselines.mujoco_dset import Mujoco_Dset
-from policy_hooks.agent_env_wrapper import *
+from opentamp.src.policy_hooks.baselines.mujoco_dset import Mujoco_Dset
+from opentamp.src.policy_hooks.agent_env_wrapper import *
 
 
 DIR_PREFIX = 'tf_saved/'
@@ -146,7 +146,7 @@ def train(env, seed, policy_fn, reward_giver, dataset, algo,
                                                  max_iters=BC_max_iter)
 
     if algo == 'trpo':
-        from policy_hooks.baselines import trpo_mpi
+        from opentamp.src.policy_hooks.baselines import trpo_mpi
         # Set up for MPI seed
         rank = MPI.COMM_WORLD.Get_rank()
         if rank != 0:

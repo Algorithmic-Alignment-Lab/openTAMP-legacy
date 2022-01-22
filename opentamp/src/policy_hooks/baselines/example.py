@@ -1,8 +1,8 @@
 import numpy as np
 import gym
 
-from policy_hooks.agent_env_wrapper import *
-from policy_hooks.utils.load_agent import *
+from opentamp.src.policy_hooks.agent_env_wrapper import *
+from opentamp.src.policy_hooks.utils.load_agent import *
 
 def run(config, mode='train'):
     print('Running example setup...')

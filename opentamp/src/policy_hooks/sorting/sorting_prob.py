@@ -6,9 +6,9 @@ import numpy as np
 import random
 
 from pma.hl_solver import FFSolver
-from policy_hooks.cloth_color_utils import *
-from policy_hooks.cloth_locs import cloth_locs as possible_cloth_locs
-from policy_hooks.load_task_definitions import get_tasks, plan_from_str
+from opentamp.src.policy_hooks.cloth_color_utils import *
+from opentamp.src.policy_hooks.cloth_locs import cloth_locs as possible_cloth_locs
+from opentamp.src.policy_hooks.load_task_definitions import get_tasks, plan_from_str
 
 targets = {
             'blue_target': [0.65, 0.85, 0.65],

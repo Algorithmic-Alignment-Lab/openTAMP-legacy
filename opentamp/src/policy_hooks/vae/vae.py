@@ -12,7 +12,7 @@ import numpy as np
 import tables
 import tensorflow as tf
 
-from policy_hooks.vae.vae_networks import *
+from opentamp.src.policy_hooks.vae.vae_networks import *
 
 
 '''

@@ -1,4 +1,4 @@
-from policy_hooks.vae.trained_envs import *
+from opentamp.src.policy_hooks.vae.trained_envs import *
 
 env = BlockSortEnv()
 

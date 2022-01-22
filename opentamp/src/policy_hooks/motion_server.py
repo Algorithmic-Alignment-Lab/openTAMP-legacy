@@ -15,12 +15,12 @@ import tensorflow as tf
 
 from core.internal_repr.plan import Plan
 import core.util_classes.transform_utils as T
-from policy_hooks.sample import Sample
-from policy_hooks.sample_list import SampleList
-from policy_hooks.utils.policy_solver_utils import *
-from policy_hooks.msg_classes import *
-from policy_hooks.server import Server
-from policy_hooks.search_node import *
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.sample_list import SampleList
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.msg_classes import *
+from opentamp.src.policy_hooks.server import Server
+from opentamp.src.policy_hooks.search_node import *
 
 
 LOG_DIR = 'experiment_logs/'

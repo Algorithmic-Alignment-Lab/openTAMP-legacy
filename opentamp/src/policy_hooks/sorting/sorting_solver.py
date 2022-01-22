@@ -15,24 +15,24 @@ from gps.algorithm.cost.cost_utils import *
 
 import core.util_classes.baxter_constants as const
 from  pma.robot_ll_solver import RobotLLSolver
-from policy_hooks.multi_task_main import GPSMain
-# from policy_hooks.cloth_exp_vec_include import *
-from policy_hooks.cloth_exp_2_vec_include import *
-from policy_hooks.cloth_world_policy_utils import *
-from policy_hooks.load_task_definitions import *
-from policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
-from policy_hooks.multi_task_tamp_agent import LaundryWorldEEAgent
-# from policy_hooks.multi_task_tamp_ee_agent import LaundryWorldEEAgent
-from policy_hooks.pose_suggester import obj_pose_suggester
+from opentamp.src.policy_hooks.multi_task_main import GPSMain
+# from opentamp.src.policy_hooks.cloth_exp_vec_include import *
+from opentamp.src.policy_hooks.cloth_exp_2_vec_include import *
+from opentamp.src.policy_hooks.cloth_world_policy_utils import *
+from opentamp.src.policy_hooks.load_task_definitions import *
+from opentamp.src.policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
+from opentamp.src.policy_hooks.multi_task_tamp_agent import LaundryWorldEEAgent
+# from opentamp.src.policy_hooks.multi_task_tamp_ee_agent import LaundryWorldEEAgent
+from opentamp.src.policy_hooks.pose_suggester import obj_pose_suggester
 import policy_hooks.policy_hyperparams as baxter_hyperparams
-from policy_hooks.policy_predicates import BaxterPolicyPredicate, BaxterPolicyEEPredicate
+from opentamp.src.policy_hooks.policy_predicates import BaxterPolicyPredicate, BaxterPolicyEEPredicate
 import policy_hooks.policy_solver_utils as utils
-from policy_hooks.sorting_prob import *
-from policy_hooks.tamp_agent import LaundryWorldClothAgent
-from policy_hooks.tamp_cost import TAMPCost
-from policy_hooks.cost_state import CostState
-from policy_hooks.tamp_action_cost import CostAction
-from policy_hooks.task_net import tf_classification_network
+from opentamp.src.policy_hooks.sorting_prob import *
+from opentamp.src.policy_hooks.tamp_agent import LaundryWorldClothAgent
+from opentamp.src.policy_hooks.tamp_cost import TAMPCost
+from opentamp.src.policy_hooks.cost_state import CostState
+from opentamp.src.policy_hooks.tamp_action_cost import CostAction
+from opentamp.src.policy_hooks.task_net import tf_classification_network
 
 
 BASE_DIR = os.getcwd() + '/policy_hooks/'

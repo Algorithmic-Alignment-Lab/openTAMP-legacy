@@ -9,7 +9,7 @@ from std_msgs.msg import Float32MultiArray, String
 from tamp_ros.msg import *
 from tamp_ros.srv import *
 
-from policy_hooks.vae.vae import VAE
+from opentamp.src.policy_hooks.vae.vae import VAE
 
 
 class VAEServer(object):

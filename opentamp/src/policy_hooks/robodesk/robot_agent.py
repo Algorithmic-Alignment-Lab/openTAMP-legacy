@@ -24,11 +24,11 @@ import core.util_classes.items as items
 from core.util_classes.openrave_body import OpenRAVEBody
 from core.util_classes.viewer import OpenRAVEViewer
 import core.util_classes.transform_utils as T
-from policy_hooks.agent import Agent
-from policy_hooks.sample import Sample
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.agent import Agent
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.tamp_agent import TAMPAgent
+from opentamp.src.policy_hooks.tamp_agent import TAMPAgent
 
 
 const.NEAR_GRIP_COEFF = 1e-1

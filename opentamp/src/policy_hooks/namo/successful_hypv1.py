@@ -6,19 +6,19 @@ import os.path
 
 import numpy as np
 
-# from policy_hooks.algorithm_pigps import AlgorithmPIGPS
-from policy_hooks.algorithm_impgps import AlgorithmIMPGPS
-from policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
+# from opentamp.src.policy_hooks.algorithm_pigps import AlgorithmPIGPS
+from opentamp.src.policy_hooks.algorithm_impgps import AlgorithmIMPGPS
+from opentamp.src.policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.traj_opt_pi2 import TrajOptPI2
+from opentamp.src.policy_hooks.traj_opt_pi2 import TrajOptPI2
 from core.util_classes.namo_predicates import ATTRMAP
 from pma.namo_solver import NAMOSolver
-from policy_hooks.namo.namo_agent import NAMOSortingAgent
-from policy_hooks.namo.namo_policy_solver import NAMOPolicySolver
+from opentamp.src.policy_hooks.namo.namo_agent import NAMOSortingAgent
+from opentamp.src.policy_hooks.namo.namo_policy_solver import NAMOPolicySolver
 import policy_hooks.namo.sorting_prob_2 as prob
-from policy_hooks.namo.namo_motion_plan_server import NAMOMotionPlanServer
-from policy_hooks.policy_mp_prior_gmm import PolicyMPPriorGMM
-from policy_hooks.policy_prior_gmm import PolicyPriorGMM
+from opentamp.src.policy_hooks.namo.namo_motion_plan_server import NAMOMotionPlanServer
+from opentamp.src.policy_hooks.policy_mp_prior_gmm import PolicyMPPriorGMM
+from opentamp.src.policy_hooks.policy_prior_gmm import PolicyPriorGMM
 
 BASE_DIR = os.getcwd() + '/policy_hooks/'
 EXP_DIR = BASE_DIR + 'experiments/'

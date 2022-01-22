@@ -16,12 +16,12 @@ import traceback
 import numpy as np
 
 import pma.backtrack_ll_solver_gurobi as bt_ll
-from policy_hooks.sample import Sample
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.sample import Sample
-from policy_hooks.policy_solver import get_base_solver
-from policy_hooks.utils.load_task_definitions import *
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.policy_solver import get_base_solver
+from opentamp.src.policy_hooks.utils.load_task_definitions import *
 
 
 def load_agent(config):

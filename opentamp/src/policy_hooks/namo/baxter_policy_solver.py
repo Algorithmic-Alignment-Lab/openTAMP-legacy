@@ -13,22 +13,22 @@ from gps.algorithm.cost.cost_utils import *
 
 from core.util_classes.baxter_predicates import ATTRMAP
 from pma.robot_ll_solver import RobotLLSolver
-# from policy_hooks.namo.multi_task_main import GPSMain
-from policy_hooks.namo.vector_include import *
-from policy_hooks.utils.load_task_definitions import *
-from policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
+# from opentamp.src.policy_hooks.namo.multi_task_main import GPSMain
+from opentamp.src.policy_hooks.namo.vector_include import *
+from opentamp.src.policy_hooks.utils.load_task_definitions import *
+from opentamp.src.policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
 # import policy_hooks.namo.namo_hyperparams as namo_hyperparams
 # import policy_hooks.namo.namo_optgps_hyperparams as namo_hyperparams
-from policy_hooks.utils.policy_solver_utils import *
-from policy_hooks.baxter.fold_prob import *
-from policy_hooks.task_net import tf_binary_network, tf_classification_network
-from policy_hooks.mcts import MCTS
-from policy_hooks.state_traj_cost import StateTrajCost
-from policy_hooks.action_traj_cost import ActionTrajCost
-from policy_hooks.traj_constr_cost import TrajConstrCost
-from policy_hooks.cost_product import CostProduct
-from policy_hooks.sample import Sample
-from policy_hooks.policy_solver import get_base_solver
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.baxter.fold_prob import *
+from opentamp.src.policy_hooks.task_net import tf_binary_network, tf_classification_network
+from opentamp.src.policy_hooks.mcts import MCTS
+from opentamp.src.policy_hooks.state_traj_cost import StateTrajCost
+from opentamp.src.policy_hooks.action_traj_cost import ActionTrajCost
+from opentamp.src.policy_hooks.traj_constr_cost import TrajConstrCost
+from opentamp.src.policy_hooks.cost_product import CostProduct
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.policy_solver import get_base_solver
 
 BASE_DIR = os.getcwd() + '/policy_hooks/'
 EXP_DIR = BASE_DIR + '/experiments'

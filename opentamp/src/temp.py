@@ -1,4 +1,4 @@
-from policy_hooks.human_labels.video_renderer import *
+from opentamp.src.policy_hooks.human_labels.video_renderer import *
 
 rend = VideoRenderer()
 rend.wait()

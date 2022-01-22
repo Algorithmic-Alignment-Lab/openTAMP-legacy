@@ -11,19 +11,19 @@ import numpy as np
 
 from gps.algorithm.policy.lin_gauss_init import init_lqr, init_pd
 
-from policy_hooks.algorithm_impgps import AlgorithmIMPGPS
-from policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
+from opentamp.src.policy_hooks.algorithm_impgps import AlgorithmIMPGPS
+from opentamp.src.policy_hooks.multi_head_policy_opt_tf import MultiHeadPolicyOptTf
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.traj_opt_pi2 import TrajOptPI2
+from opentamp.src.policy_hooks.traj_opt_pi2 import TrajOptPI2
 from core.util_classes.namo_grip_predicates import ATTRMAP
 #import policy_hooks.robosuite.sort_prob as prob
 import policy_hooks.robosuite.moveto_prob as prob
 prob.NUM_OBJS = NUM_OBJS
 prob.NUM_TARGS = NUM_TARGS
-from policy_hooks.policy_mp_prior_gmm import PolicyMPPriorGMM
-from policy_hooks.policy_prior_gmm import PolicyPriorGMM
+from opentamp.src.policy_hooks.policy_mp_prior_gmm import PolicyMPPriorGMM
+from opentamp.src.policy_hooks.policy_prior_gmm import PolicyPriorGMM
 
-from policy_hooks.robosuite.robot_agent import RobotAgent
+from opentamp.src.policy_hooks.robosuite.robot_agent import RobotAgent
 from pma.robosuite_solver import RobotSolver
 
 BASE_DIR = os.getcwd() + '/policy_hooks/'

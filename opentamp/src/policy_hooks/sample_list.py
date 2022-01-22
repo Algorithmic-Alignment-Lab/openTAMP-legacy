@@ -4,7 +4,7 @@ import logging
 
 import numpy as np
 
-from policy_hooks.utils.policy_solver_utils import NOISE_ENUM
+from opentamp.src.policy_hooks.utils.policy_solver_utils import NOISE_ENUM
 
 
 LOGGER = logging.getLogger(__name__)

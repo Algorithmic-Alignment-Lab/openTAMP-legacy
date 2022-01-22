@@ -24,10 +24,10 @@ from gps.gui.gps_training_gui import GPSTrainingGUI
 from gps.utility.data_logger import DataLogger
 from gps.sample.sample_list import SampleList
 
-from policy_hooks.mcts import MCTS
-from policy_hooks.state_mcts import StateMCTS
-from policy_hooks.sample import Sample
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.mcts import MCTS
+from opentamp.src.policy_hooks.state_mcts import StateMCTS
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 
 
 class LocalControl:

@@ -7,10 +7,10 @@ import queue
 import numpy as np
 import os, psutil
 
-from policy_hooks.control_attention_policy_opt import ControlAttentionPolicyOpt
-from policy_hooks.msg_classes import *
-from policy_hooks.policy_data_loader import DataLoader
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.control_attention_policy_opt import ControlAttentionPolicyOpt
+from opentamp.src.policy_hooks.msg_classes import *
+from opentamp.src.policy_hooks.policy_data_loader import DataLoader
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 
 LOG_DIR = 'experiment_logs/'
 MAX_QUEUE_SIZE = 100

@@ -17,7 +17,7 @@ from sco_py.expr import *
 import core.util_classes.common_constants as const
 import pybullet as P
 
-from policy_hooks.sample_list import SampleList
+from opentamp.src.policy_hooks.sample_list import SampleList
 
 from opentamp.envs import MJCEnv
 
@@ -25,13 +25,13 @@ import core.util_classes.items as items
 from core.util_classes.openrave_body import OpenRAVEBody
 from core.util_classes.viewer import OpenRAVEViewer
 
-from policy_hooks.agent import Agent
-from policy_hooks.sample import Sample
-from policy_hooks.utils.policy_solver_utils import *
+from opentamp.src.policy_hooks.agent import Agent
+from opentamp.src.policy_hooks.sample import Sample
+from opentamp.src.policy_hooks.utils.policy_solver_utils import *
 import policy_hooks.utils.policy_solver_utils as utils
-from policy_hooks.utils.tamp_eval_funcs import *
-# from policy_hooks.namo.sorting_prob_4 import *
-from policy_hooks.tamp_agent import TAMPAgent
+from opentamp.src.policy_hooks.utils.tamp_eval_funcs import *
+# from opentamp.src.policy_hooks.namo.sorting_prob_4 import *
+from opentamp.src.policy_hooks.tamp_agent import TAMPAgent
 
 
 NEAR_TOL = 0.03
