@@ -43,16 +43,16 @@ If you wish to train policies from the code, verify that a Mujoco key titled `mj
 ### Defining domains
 
 #### Domain files
-Specifications for all domains should be placed in the `domains` folder directly under the `OpenTAMP` directory
+Specifications for all domains should be placed in the `domains` folder directly under the `opentamp` directory
 
-For a concrete example, refer to `domains/namo_domain/generate_namo_domain.py`. This is script designed to generate a domain file (these files are cumbersome to write directly by hand)
+For a concrete example, refer to `opentamp/domains/namo_domain/generate_namo_domain.py`. This is script designed to generate a domain file (these files are cumbersome to write directly by hand)
 
 ##### Types
 The first portion of the file will look like
 
 `Types: Can, Target, RobotPose, Robot, Grasp, Obstacle`
 
-Here, everything following `Types:` is a "type" parameters in the domain can be
+Here, everything following `Types:` is a "type" that parameters in the domain can take on.
 
 ##### Import Paths
 The next portion specifies where to find various necessary code
@@ -160,7 +160,7 @@ class At(ExprPredicate):
         super(At, self).__init__(name, e, attr_inds, params, expected_param_types, priority=-2)
 ```
 What's going on here:
-- `attr_inds` is a dictionary describing which indices of which atrributes will be used from each parameter; e.g. indices 0 and 1 of the can's pose will be included in the state vector x
+- `attr_inds` is a dictionary describing which indices of which attributes will be used from each parameter; e.g. indices 0 and 1 of the can's pose will be included in the state vector x
 - `A` defines a matrix such that Ax = [0., 0.] iff. x[:2] == x[2:]; in this context that means can.pose == targ.value
 - `aff_e` is an affine expression of the form `Ax+b`
 - `e` is then an affine constraint of the form `Ax+b=val`

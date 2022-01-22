@@ -55,7 +55,7 @@ for pname in params:
     if targ in params:
         params[targ].value[:,0] = params[pname].pose[:,0]
 
-# NOTE: To use Gurrobi instead of OSQP, simply replace the below line with:
+# NOTE: To use Gurobi instead of OSQP, simply replace the below line with:
 # solver = NAMOSolverGurobi()
 solver = NAMOSolverOSQP()
 
