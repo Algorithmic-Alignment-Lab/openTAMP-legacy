@@ -11,4 +11,4 @@ This iksolver file has to match following model and openrave version
 
 Note: baxter.dae was uploaded through github lfs. Pull this file can be done by
   1. installing git lfs
-  2. type git lfs pull on the terminal. 
+  2. type git-lfs pull on the terminal. 
